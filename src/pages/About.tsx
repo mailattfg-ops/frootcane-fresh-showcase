@@ -2,89 +2,144 @@ import Layout from "@/components/Layout";
 import SectionReveal from "@/components/SectionReveal";
 import aboutImg from "@/assets/about-story.jpg";
 import fieldImg from "@/assets/gallery-field.jpg";
+import pressImg from "@/assets/gallery-press.jpg";
 import { Leaf, Heart, ShieldCheck, Sun } from "lucide-react";
-
-const values = [
-  { icon: Leaf, title: "Sustainability", desc: "We work with local farmers who use sustainable practices." },
-  { icon: Heart, title: "Wellness", desc: "Every drink is designed to nourish and energize naturally." },
-  { icon: ShieldCheck, title: "Transparency", desc: "From field to glass, we never cut corners on quality." },
-  { icon: Sun, title: "Community", desc: "Supporting local agriculture and healthy communities." },
-];
-
-const milestones = [
-  { year: "2018", text: "Frootcane founded with a single juice cart." },
-  { year: "2019", text: "Opened our first flagship café." },
-  { year: "2021", text: "Expanded to 5 locations across the city." },
-  { year: "2023", text: "Launched signature blends and seasonal menus." },
-  { year: "2025", text: "Serving 10,000+ happy customers monthly." },
-];
 
 const About = () => (
   <Layout>
-    {/* Hero */}
+    {/* Header */}
+    <section className="py-16 md:py-24 bg-muted">
+      <div className="container max-w-3xl text-center">
+        <SectionReveal>
+          <h1 className="text-foreground mb-5">About Frootcane</h1>
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            We started with a simple idea: sugarcane juice shouldn't need anything added to it. No extra sugar, no water, no concentrates. Just the real thing, pressed fresh and served with care.
+          </p>
+        </SectionReveal>
+      </div>
+    </section>
+
+    {/* Origin story */}
+    <section className="py-20 md:py-28">
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <SectionReveal>
+          <img
+            src={aboutImg}
+            alt="Ginger lemon sugarcane juice on marble"
+            className="rounded-2xl w-full object-cover aspect-[4/5] max-h-[480px]"
+          />
+        </SectionReveal>
+        <SectionReveal>
+          <span className="text-xs font-heading font-bold uppercase tracking-wider text-secondary mb-3 block">Our story</span>
+          <h2 className="text-foreground mb-4">How it started</h2>
+          <p className="text-muted-foreground mb-4 leading-relaxed">
+            Frootcane began in 2018 as a single juice cart at a weekend farmer's market. The idea was straightforward: source great sugarcane from local farms, press it right in front of people, and let the juice speak for itself.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            It worked. People kept coming back — not because of clever marketing, but because they could taste the difference. Within a year, we'd opened our first café. Today we operate five locations, and every single one still presses juice fresh throughout the day.
+          </p>
+        </SectionReveal>
+      </div>
+    </section>
+
+    {/* Sourcing */}
     <section className="py-20 md:py-28 bg-muted">
-      <div className="container">
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <SectionReveal className="order-2 md:order-1">
+          <span className="text-xs font-heading font-bold uppercase tracking-wider text-secondary mb-3 block">Sourcing</span>
+          <h2 className="text-foreground mb-4">Where our cane comes from</h2>
+          <p className="text-muted-foreground mb-4 leading-relaxed">
+            We work directly with a small network of farms within 80 kilometres of each of our locations. They grow sugarcane using sustainable methods — no synthetic pesticides, responsible water use, and crop rotation that keeps the soil healthy.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            We visit our farms regularly. It's not a marketing exercise — we genuinely need to know that the cane is growing well, harvested at the right time, and transported under proper conditions. Good juice starts in the field.
+          </p>
+        </SectionReveal>
+        <SectionReveal className="order-1 md:order-2">
+          <img
+            src={fieldImg}
+            alt="Sugarcane field at golden hour"
+            className="rounded-2xl w-full object-cover aspect-[4/5] max-h-[480px]"
+          />
+        </SectionReveal>
+      </div>
+    </section>
+
+    {/* Hygiene */}
+    <section className="py-20 md:py-28">
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
         <SectionReveal>
-          <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-foreground text-center mb-6">
-            Our Story
-          </h1>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto text-lg">
-            Born from a passion for pure, natural refreshment, Frootcane is on a mission to bring the best sugarcane juice experience to everyone.
+          <img
+            src={pressImg}
+            alt="Sugarcane being pressed in a clean facility"
+            className="rounded-2xl w-full object-cover aspect-[4/5] max-h-[480px]"
+          />
+        </SectionReveal>
+        <SectionReveal>
+          <span className="text-xs font-heading font-bold uppercase tracking-wider text-secondary mb-3 block">Hygiene</span>
+          <h2 className="text-foreground mb-4">How we keep things clean</h2>
+          <p className="text-muted-foreground mb-4 leading-relaxed">
+            Every stalk of sugarcane is washed and peeled before pressing. Our machines are disassembled and deep-cleaned twice daily, and our staff follow strict food-handling protocols.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            We're transparent about this because it matters. If you visit one of our locations, you can watch the entire process from start to finish — that's by design.
           </p>
         </SectionReveal>
       </div>
     </section>
 
-    {/* Story */}
-    <section className="py-20 bg-background">
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    {/* Health benefits */}
+    <section className="py-20 md:py-28 bg-muted">
+      <div className="container max-w-3xl">
         <SectionReveal>
-          <img src={aboutImg} alt="Fresh juice" className="rounded-2xl shadow-lg w-full object-cover max-h-[420px]" />
+          <div className="text-center mb-12">
+            <h2 className="text-foreground mb-3">Why sugarcane juice is good for you</h2>
+            <div className="section-divider" />
+          </div>
         </SectionReveal>
         <SectionReveal>
-          <h2 className="font-heading text-3xl font-bold text-foreground mb-4">From Farm to Glass</h2>
-          <p className="text-muted-foreground mb-4">
-            We source our sugarcane from trusted local farms that practice organic and sustainable agriculture. Every stalk is hand-selected, cleaned under strict hygiene protocols, and pressed fresh — never stored, never processed.
-          </p>
-          <p className="text-muted-foreground">
-            Our commitment to quality means you taste the real thing: pure sugarcane juice with all its natural vitamins, minerals, and electrolytes. No water, no sugar, no preservatives — just nature's energy drink.
-          </p>
-        </SectionReveal>
-      </div>
-    </section>
-
-    {/* Health Benefits */}
-    <section className="py-20 bg-muted">
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <SectionReveal>
-          <h2 className="font-heading text-3xl font-bold text-foreground mb-4">Health Benefits</h2>
-          <ul className="space-y-3 text-muted-foreground">
-            <li className="flex items-start gap-2"><span className="text-secondary font-bold">•</span> Rich in natural antioxidants and flavonoids</li>
-            <li className="flex items-start gap-2"><span className="text-secondary font-bold">•</span> Natural source of iron, magnesium, and calcium</li>
-            <li className="flex items-start gap-2"><span className="text-secondary font-bold">•</span> Boosts energy without the sugar crash</li>
-            <li className="flex items-start gap-2"><span className="text-secondary font-bold">•</span> Supports liver health and digestion</li>
-            <li className="flex items-start gap-2"><span className="text-secondary font-bold">•</span> Natural hydration with essential electrolytes</li>
-          </ul>
-        </SectionReveal>
-        <SectionReveal>
-          <img src={fieldImg} alt="Sugarcane field" className="rounded-2xl shadow-lg w-full object-cover max-h-[420px]" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4">
+            {[
+              "Natural source of iron, calcium, and magnesium",
+              "Contains antioxidants and flavonoids",
+              "Provides sustained energy without the crash",
+              "Supports healthy digestion and liver function",
+              "Naturally hydrating with essential electrolytes",
+              "Low glycemic index compared to processed sugar",
+            ].map((benefit) => (
+              <p key={benefit} className="text-muted-foreground text-sm flex items-start gap-2">
+                <span className="text-secondary mt-0.5 shrink-0">—</span>
+                {benefit}
+              </p>
+            ))}
+          </div>
         </SectionReveal>
       </div>
     </section>
 
-    {/* Timeline */}
-    <section className="py-20 bg-background">
-      <div className="container max-w-2xl">
+    {/* Values */}
+    <section className="py-20 md:py-28">
+      <div className="container max-w-4xl">
         <SectionReveal>
-          <h2 className="font-heading text-3xl font-bold text-foreground text-center mb-12">Our Journey</h2>
+          <div className="text-center mb-14">
+            <h2 className="text-foreground mb-3">What we stand for</h2>
+            <div className="section-divider" />
+          </div>
         </SectionReveal>
-        <div className="relative border-l-2 border-primary/40 pl-8 space-y-10">
-          {milestones.map((m) => (
-            <SectionReveal key={m.year}>
-              <div className="relative">
-                <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary border-2 border-background" />
-                <span className="font-heading font-bold text-secondary text-sm">{m.year}</span>
-                <p className="text-foreground mt-1">{m.text}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { icon: Leaf, title: "Sustainability", desc: "We partner with farms that care about the land as much as we do." },
+            { icon: Heart, title: "Wellness", desc: "Every drink is meant to nourish — not just taste good." },
+            { icon: ShieldCheck, title: "Transparency", desc: "Watch us make your juice. We have nothing to hide." },
+            { icon: Sun, title: "Community", desc: "We buy local, hire local, and give back where we can." },
+          ].map((v) => (
+            <SectionReveal key={v.title}>
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-primary/12 text-secondary mb-3">
+                  <v.icon size={20} strokeWidth={1.8} />
+                </div>
+                <h3 className="text-foreground text-base mb-1">{v.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
               </div>
             </SectionReveal>
           ))}
@@ -92,21 +147,28 @@ const About = () => (
       </div>
     </section>
 
-    {/* Values */}
-    <section className="py-20 bg-muted">
-      <div className="container">
+    {/* Timeline */}
+    <section className="py-20 md:py-28 bg-muted">
+      <div className="container max-w-xl">
         <SectionReveal>
-          <h2 className="font-heading text-3xl font-bold text-foreground text-center mb-12">Our Values</h2>
+          <div className="text-center mb-14">
+            <h2 className="text-foreground mb-3">Our journey so far</h2>
+            <div className="section-divider" />
+          </div>
         </SectionReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {values.map((v) => (
-            <SectionReveal key={v.title}>
-              <div className="bg-card rounded-xl p-6 text-center border border-border shadow-sm">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/15 text-secondary mb-3">
-                  <v.icon size={24} />
-                </div>
-                <h3 className="font-heading font-bold text-foreground mb-1">{v.title}</h3>
-                <p className="text-muted-foreground text-sm">{v.desc}</p>
+        <div className="relative border-l border-primary/30 pl-8 space-y-8 ml-2">
+          {[
+            { year: "2018", text: "Started with one juice cart at a local farmer's market." },
+            { year: "2019", text: "Opened our first permanent café in the city centre." },
+            { year: "2021", text: "Grew to five locations across the metro area." },
+            { year: "2023", text: "Introduced our signature blends and seasonal rotating menu." },
+            { year: "2025", text: "Now serving over 10,000 customers every month." },
+          ].map((m) => (
+            <SectionReveal key={m.year}>
+              <div className="relative">
+                <div className="absolute -left-[37px] top-1.5 w-3 h-3 rounded-full bg-primary" />
+                <span className="font-heading font-bold text-secondary text-xs uppercase tracking-wider">{m.year}</span>
+                <p className="text-foreground mt-1 text-sm">{m.text}</p>
               </div>
             </SectionReveal>
           ))}
