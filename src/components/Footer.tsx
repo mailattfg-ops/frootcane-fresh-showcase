@@ -2,24 +2,24 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Footer = () => (
-  <footer className="bg-muted border-t border-border">
-    <div className="container py-12 md:py-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-2">
+  <footer className="border-t border-border/60 bg-background">
+    <div className="container py-14 md:py-18">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+        {/* Brand */}
+        <div className="md:col-span-5">
+          <div className="flex items-center gap-2 mb-3">
             <img src={logo} alt="Frootcane" className="h-8 w-8" />
-            <span className="font-heading text-lg font-bold text-foreground">
-              Frootcane
-            </span>
+            <span className="font-heading text-lg font-bold text-foreground">Frootcane</span>
           </div>
-          <p className="text-muted-foreground text-sm max-w-xs">
-            Premium sugarcane juice, freshly pressed with love. Pure, natural, and full of energy.
+          <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
+            Freshly pressed sugarcane juice made the way it should be — simple, clean, and full of flavour. No shortcuts, no compromises.
           </p>
         </div>
 
-        <div>
-          <h4 className="font-heading font-bold text-foreground mb-3">Quick Links</h4>
-          <ul className="space-y-2">
+        {/* Links */}
+        <div className="md:col-span-3">
+          <h4 className="font-heading text-sm font-bold text-foreground mb-4 uppercase tracking-wider">Pages</h4>
+          <ul className="space-y-2.5">
             {[
               { label: "Home", to: "/" },
               { label: "About", to: "/about" },
@@ -27,10 +27,7 @@ const Footer = () => (
               { label: "Contact", to: "/contact" },
             ].map((l) => (
               <li key={l.to}>
-                <Link
-                  to={l.to}
-                  className="text-muted-foreground text-sm hover:text-secondary transition-colors"
-                >
+                <Link to={l.to} className="text-muted-foreground text-sm hover:text-secondary transition-colors duration-200">
                   {l.label}
                 </Link>
               </li>
@@ -38,18 +35,21 @@ const Footer = () => (
           </ul>
         </div>
 
-        <div>
-          <h4 className="font-heading font-bold text-foreground mb-3">Contact</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>📍 123 Green Lane, Fresh City</li>
-            <li>📞 +1 (555) 123-4567</li>
-            <li>✉️ hello@frootcane.com</li>
-          </ul>
+        {/* Contact */}
+        <div className="md:col-span-4">
+          <h4 className="font-heading text-sm font-bold text-foreground mb-4 uppercase tracking-wider">Contact</h4>
+          <address className="not-italic space-y-2.5 text-sm text-muted-foreground">
+            <p>123 Green Lane, Fresh City</p>
+            <p>+1 (555) 123-4567</p>
+            <p>hello@frootcane.com</p>
+          </address>
         </div>
       </div>
 
-      <div className="mt-10 pt-6 border-t border-border text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Frootcane. All rights reserved.
+      <div className="mt-12 pt-6 border-t border-border/60 text-center">
+        <p className="text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Frootcane. All rights reserved.
+        </p>
       </div>
     </div>
   </footer>
