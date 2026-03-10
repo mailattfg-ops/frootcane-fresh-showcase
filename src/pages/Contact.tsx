@@ -59,17 +59,18 @@ const Contact = () => {
           {/* Form */}
           <div className="lg:col-span-3">
             <SectionReveal>
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div>
                   <label htmlFor="name" className="block font-heading text-sm font-semibold text-foreground mb-1.5">Name</label>
                   <Input
                     id="name"
                     value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    onChange={(e) => { setForm({ ...form, name: e.target.value }); setErrors((prev) => ({ ...prev, name: undefined })); }}
                     placeholder="Your name"
                     required
-                    className="h-11"
+                    className={`h-11 ${errors.name ? "border-destructive focus-visible:ring-destructive" : ""}`}
                   />
+                  {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
                 </div>
                 <div>
                   <label htmlFor="email" className="block font-heading text-sm font-semibold text-foreground mb-1.5">Email</label>
@@ -77,11 +78,12 @@ const Contact = () => {
                     id="email"
                     type="email"
                     value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    onChange={(e) => { setForm({ ...form, email: e.target.value }); setErrors((prev) => ({ ...prev, email: undefined })); }}
                     placeholder="you@example.com"
                     required
-                    className="h-11"
+                    className={`h-11 ${errors.email ? "border-destructive focus-visible:ring-destructive" : ""}`}
                   />
+                  {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
                 </div>
                 <div>
                   <label htmlFor="message" className="block font-heading text-sm font-semibold text-foreground mb-1.5">Message</label>
