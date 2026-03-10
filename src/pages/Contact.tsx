@@ -127,7 +127,7 @@ const Contact = () => {
                   <Mail size={18} className="text-secondary mt-0.5 shrink-0" />
                   <div>
                     <h3 className="text-foreground text-base mb-0.5">Email us</h3>
-                    <p className="text-muted-foreground text-sm">hello@frootcane.com</p>
+                    <a href="mailto:hello@frootcane.com" className="text-muted-foreground text-sm hover:text-secondary transition-colors underline">hello@frootcane.com</a>
                   </div>
                 </div>
 

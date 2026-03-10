@@ -114,7 +114,7 @@ const Index = () => (
                   {juice.tag}
                 </span>
                 <h3 className="text-foreground mb-2">{juice.name}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{juice.desc}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed flex-1">{juice.desc}</p>
               </div>
             </SectionReveal>
           ))}
