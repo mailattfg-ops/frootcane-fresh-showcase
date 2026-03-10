@@ -9,11 +9,35 @@ import { toast } from "sonner";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState<{ name?: string; email?: string }>({});
+
+  const validateForm = () => {
+    const newErrors: { name?: string; email?: string } = {};
+    const nameRegex = /^[a-zA-Z\s'-]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!form.name.trim()) {
+      newErrors.name = "Name is required.";
+    } else if (!nameRegex.test(form.name.trim())) {
+      newErrors.name = "Name can only contain letters, spaces, hyphens, and apostrophes.";
+    }
+
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!emailRegex.test(form.email.trim())) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) return;
     toast.success("Thanks! We'll get back to you within 24 hours.");
     setForm({ name: "", email: "", message: "" });
+    setErrors({});
   };
 
   return (
@@ -35,17 +59,18 @@ const Contact = () => {
           {/* Form */}
           <div className="lg:col-span-3">
             <SectionReveal>
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div>
                   <label htmlFor="name" className="block font-heading text-sm font-semibold text-foreground mb-1.5">Name</label>
                   <Input
                     id="name"
                     value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    onChange={(e) => { setForm({ ...form, name: e.target.value }); setErrors((prev) => ({ ...prev, name: undefined })); }}
                     placeholder="Your name"
                     required
-                    className="h-11"
+                    className={`h-11 ${errors.name ? "border-destructive focus-visible:ring-destructive" : ""}`}
                   />
+                  {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
                 </div>
                 <div>
                   <label htmlFor="email" className="block font-heading text-sm font-semibold text-foreground mb-1.5">Email</label>
@@ -53,11 +78,12 @@ const Contact = () => {
                     id="email"
                     type="email"
                     value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    onChange={(e) => { setForm({ ...form, email: e.target.value }); setErrors((prev) => ({ ...prev, email: undefined })); }}
                     placeholder="you@example.com"
                     required
-                    className="h-11"
+                    className={`h-11 ${errors.email ? "border-destructive focus-visible:ring-destructive" : ""}`}
                   />
+                  {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
                 </div>
                 <div>
                   <label htmlFor="message" className="block font-heading text-sm font-semibold text-foreground mb-1.5">Message</label>
@@ -101,7 +127,7 @@ const Contact = () => {
                   <Mail size={18} className="text-secondary mt-0.5 shrink-0" />
                   <div>
                     <h3 className="text-foreground text-base mb-0.5">Email us</h3>
-                    <p className="text-muted-foreground text-sm">hello@frootcane.com</p>
+                    <a href="mailto:hello@frootcane.com" className="text-muted-foreground text-sm hover:text-secondary transition-colors underline">hello@frootcane.com</a>
                   </div>
                 </div>
 

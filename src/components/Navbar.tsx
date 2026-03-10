@@ -31,7 +31,7 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between h-16 md:h-[72px]">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <img src={logo} alt="Frootcane logo" className="h-9 w-9 transition-transform duration-200 group-hover:scale-105" />
+          <img src={logo} alt="Frootcane logo" className="h-11 w-11 transition-transform duration-200 group-hover:scale-105" />
           <span className="font-heading text-lg font-bold tracking-tight text-foreground">
             Frootcane
           </span>
