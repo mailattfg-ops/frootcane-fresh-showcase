@@ -9,11 +9,35 @@ import { toast } from "sonner";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState<{ name?: string; email?: string }>({});
+
+  const validateForm = () => {
+    const newErrors: { name?: string; email?: string } = {};
+    const nameRegex = /^[a-zA-Z\s'-]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!form.name.trim()) {
+      newErrors.name = "Name is required.";
+    } else if (!nameRegex.test(form.name.trim())) {
+      newErrors.name = "Name can only contain letters, spaces, hyphens, and apostrophes.";
+    }
+
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!emailRegex.test(form.email.trim())) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) return;
     toast.success("Thanks! We'll get back to you within 24 hours.");
     setForm({ name: "", email: "", message: "" });
+    setErrors({});
   };
 
   return (
