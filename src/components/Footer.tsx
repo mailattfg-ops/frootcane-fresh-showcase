@@ -7,9 +7,9 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
         {/* Brand */}
         <div className="md:col-span-5">
-          <div className="flex items-center gap-2 mb-3">
-            <img src={logo} alt="Frootcane" className="h-8 w-8" />
-            <span className="font-heading text-lg font-bold text-foreground">Frootcane</span>
+          <div className="flex items-center gap-2.5 mb-3">
+            <img src={logo} alt="Frootcane" className="h-10 w-10" />
+            <span className="font-heading text-xl font-bold text-foreground">Frootcane</span>
           </div>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
             Freshly pressed sugarcane juice made the way it should be — simple, clean, and full of flavour. No shortcuts, no compromises.
@@ -40,8 +40,8 @@ const Footer = () => (
           <h4 className="font-heading text-sm font-bold text-foreground mb-4 uppercase tracking-wider">Contact</h4>
           <address className="not-italic space-y-2.5 text-sm text-muted-foreground">
             <p>123 Green Lane, Fresh City</p>
-            <p>+1 (555) 123-4567</p>
-            <p>hello@frootcane.com</p>
+            <p><a href="tel:+15551234567" className="hover:text-secondary transition-colors">+1 (555) 123-4567</a></p>
+            <p><a href="mailto:hello@frootcane.com" className="hover:text-secondary transition-colors">hello@frootcane.com</a></p>
           </address>
         </div>
       </div>

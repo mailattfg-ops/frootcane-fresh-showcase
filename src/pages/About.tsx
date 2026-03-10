@@ -29,7 +29,7 @@ const About = () => (
             className="rounded-2xl w-full object-cover aspect-[4/5] max-h-[480px]"
           />
         </SectionReveal>
-        <SectionReveal>
+        <SectionReveal className="text-center md:text-left">
           <span className="text-xs font-heading font-bold uppercase tracking-wider text-secondary mb-3 block">Our story</span>
           <h2 className="text-foreground mb-4">How it started</h2>
           <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -45,7 +45,7 @@ const About = () => (
     {/* Sourcing */}
     <section className="py-20 md:py-28 bg-muted">
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <SectionReveal className="order-2 md:order-1">
+        <SectionReveal className="order-2 md:order-1 text-center md:text-left">
           <span className="text-xs font-heading font-bold uppercase tracking-wider text-secondary mb-3 block">Sourcing</span>
           <h2 className="text-foreground mb-4">Where our cane comes from</h2>
           <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -75,7 +75,7 @@ const About = () => (
             className="rounded-2xl w-full object-cover aspect-[4/5] max-h-[480px]"
           />
         </SectionReveal>
-        <SectionReveal>
+        <SectionReveal className="text-center md:text-left">
           <span className="text-xs font-heading font-bold uppercase tracking-wider text-secondary mb-3 block">Hygiene</span>
           <h2 className="text-foreground mb-4">How we keep things clean</h2>
           <p className="text-muted-foreground mb-4 leading-relaxed">

@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import Layout from "@/components/Layout";
 import SectionReveal from "@/components/SectionReveal";
 import { Button } from "@/components/ui/button";
@@ -6,14 +8,37 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+
+const formSchema = z.object({
+  name: z.string()
+    .min(2, "Name must be at least 2 characters")
+    .regex(/^[a-zA-Z\s]*$/, "Name can only contain letters and spaces"),
+  email: z.string().email("Please enter a valid email address"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+});
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    console.log(values);
     toast.success("Thanks! We'll get back to you within 24 hours.");
-    setForm({ name: "", email: "", message: "" });
+    form.reset();
   };
 
   return (
@@ -35,45 +60,56 @@ const Contact = () => {
           {/* Form */}
           <div className="lg:col-span-3">
             <SectionReveal>
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block font-heading text-sm font-semibold text-foreground mb-1.5">Name</label>
-                  <Input
-                    id="name"
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="Your name"
-                    required
-                    className="h-11"
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Your name" {...field} className="h-11" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block font-heading text-sm font-semibold text-foreground mb-1.5">Email</label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="you@example.com"
-                    required
-                    className="h-11"
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input placeholder="you@example.com" {...field} className="h-11" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block font-heading text-sm font-semibold text-foreground mb-1.5">Message</label>
-                  <Textarea
-                    id="message"
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    placeholder="What can we help with?"
-                    rows={5}
-                    required
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Message</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="What can we help with?"
+                            rows={5}
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                <Button type="submit" variant="cta" size="lg" className="w-full sm:w-auto">
-                  Send Message
-                </Button>
-              </form>
+                  <Button type="submit" variant="cta" size="lg" className="w-full sm:w-auto">
+                    Send Message
+                  </Button>
+                </form>
+              </Form>
             </SectionReveal>
           </div>
 
@@ -93,7 +129,11 @@ const Contact = () => {
                   <Phone size={18} className="text-secondary mt-0.5 shrink-0" />
                   <div>
                     <h3 className="text-foreground text-base mb-0.5">Call us</h3>
-                    <p className="text-muted-foreground text-sm">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground text-sm">
+                      <a href="tel:+15551234567" className="hover:text-secondary transition-colors">
+                        +1 (555) 123-4567
+                      </a>
+                    </p>
                   </div>
                 </div>
 
@@ -101,7 +141,11 @@ const Contact = () => {
                   <Mail size={18} className="text-secondary mt-0.5 shrink-0" />
                   <div>
                     <h3 className="text-foreground text-base mb-0.5">Email us</h3>
-                    <p className="text-muted-foreground text-sm">hello@frootcane.com</p>
+                    <p className="text-muted-foreground text-sm">
+                      <a href="mailto:hello@frootcane.com" className="hover:text-secondary transition-colors">
+                        hello@frootcane.com
+                      </a>
+                    </p>
                   </div>
                 </div>
 

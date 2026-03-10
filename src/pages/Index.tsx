@@ -12,12 +12,12 @@ const Index = () => (
     {/* Hero */}
     <section className="relative overflow-hidden bg-muted">
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-16 md:py-24 lg:py-32">
-        <div className="order-2 lg:order-1">
+        <div className="order-2 lg:order-1 text-center lg:text-left">
           <h1 className="text-foreground animate-fade-up">
             Fresh sugarcane juice,<br />
             the way it should be.
           </h1>
-          <p className="mt-5 text-muted-foreground text-lg leading-relaxed max-w-md animate-fade-up-delay-1">
+          <p className="mt-5 text-muted-foreground text-lg leading-relaxed max-w-md mx-auto lg:mx-0 animate-fade-up-delay-1">
             We press every glass to order using locally sourced sugarcane. No water added, no preservatives, no nonsense — just clean, natural energy that tastes as good as it feels.
           </p>
           <div className="mt-8 animate-fade-up-delay-2">
@@ -109,12 +109,12 @@ const Index = () => (
             },
           ].map((juice) => (
             <SectionReveal key={juice.name}>
-              <div className="bg-card rounded-xl p-7 border border-border/60 hover:border-primary/30 transition-colors duration-300">
+              <div className="bg-card rounded-xl p-7 border border-border/60 hover:border-primary/30 transition-colors duration-300 h-full flex flex-col">
                 <span className="inline-block text-xs font-heading font-bold uppercase tracking-wider text-secondary mb-3">
                   {juice.tag}
                 </span>
                 <h3 className="text-foreground mb-2">{juice.name}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{juice.desc}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed flex-grow">{juice.desc}</p>
               </div>
             </SectionReveal>
           ))}
