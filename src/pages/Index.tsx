@@ -109,7 +109,7 @@ const Index = () => (
             },
           ].map((juice) => (
             <SectionReveal key={juice.name}>
-              <div className="bg-card rounded-xl p-7 border border-border/60 hover:border-primary/30 transition-colors duration-300">
+              <div className="bg-card rounded-xl p-7 border border-border/60 hover:border-primary/30 transition-colors duration-300 h-full flex flex-col">
                 <span className="inline-block text-xs font-heading font-bold uppercase tracking-wider text-secondary mb-3">
                   {juice.tag}
                 </span>
