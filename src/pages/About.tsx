@@ -31,7 +31,7 @@ const About = () => (
         </SectionReveal>
         <SectionReveal className="text-center md:text-left">
           <span className="text-xs font-heading font-bold uppercase tracking-wider text-secondary mb-3 block">Our story</span>
-          <h2 className="text-foreground mb-4">How it started</h2>
+          <h2 className="text-foreground text-3xl md:text-4xl lg:text-5xl mb-4 font-extrabold tracking-tight">How it started</h2>
           <p className="text-muted-foreground mb-4 leading-relaxed">
             Frootcane began in 2018 as a single juice cart at a weekend farmer's market. The idea was straightforward: source great sugarcane from local farms, press it right in front of people, and let the juice speak for itself.
           </p>
@@ -47,7 +47,7 @@ const About = () => (
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
         <SectionReveal className="order-2 md:order-1 text-center md:text-left">
           <span className="text-xs font-heading font-bold uppercase tracking-wider text-secondary mb-3 block">Sourcing</span>
-          <h2 className="text-foreground mb-4">Where our cane comes from</h2>
+          <h2 className="text-foreground text-3xl md:text-4xl lg:text-5xl mb-4 font-extrabold tracking-tight">Where our cane comes from</h2>
           <p className="text-muted-foreground mb-4 leading-relaxed">
             We work directly with a small network of farms within 80 kilometres of each of our locations. They grow sugarcane using sustainable methods — no synthetic pesticides, responsible water use, and crop rotation that keeps the soil healthy.
           </p>
@@ -77,7 +77,7 @@ const About = () => (
         </SectionReveal>
         <SectionReveal className="text-center md:text-left">
           <span className="text-xs font-heading font-bold uppercase tracking-wider text-secondary mb-3 block">Hygiene</span>
-          <h2 className="text-foreground mb-4">How we keep things clean</h2>
+          <h2 className="text-foreground text-3xl md:text-4xl lg:text-5xl mb-4 font-extrabold tracking-tight">How we keep things clean</h2>
           <p className="text-muted-foreground mb-4 leading-relaxed">
             Every stalk of sugarcane is washed and peeled before pressing. Our machines are disassembled and deep-cleaned twice daily, and our staff follow strict food-handling protocols.
           </p>
@@ -93,7 +93,7 @@ const About = () => (
       <div className="container max-w-3xl">
         <SectionReveal>
           <div className="text-center mb-12">
-            <h2 className="text-foreground mb-3">Why sugarcane juice is good for you</h2>
+            <h2 className="text-foreground text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-3">Why sugarcane juice is good for you</h2>
             <div className="section-divider" />
           </div>
         </SectionReveal>
@@ -107,8 +107,8 @@ const About = () => (
               "Naturally hydrating with essential electrolytes",
               "Low glycemic index compared to processed sugar",
             ].map((benefit) => (
-              <p key={benefit} className="text-muted-foreground text-sm flex items-start gap-2">
-                <span className="text-secondary mt-0.5 shrink-0">—</span>
+              <p key={benefit} className="text-muted-foreground text-lg md:text-xl flex items-start gap-2">
+                <span className="text-secondary mt-1 shrink-0 font-bold">—</span>
                 {benefit}
               </p>
             ))}
@@ -122,7 +122,7 @@ const About = () => (
       <div className="container max-w-4xl">
         <SectionReveal>
           <div className="text-center mb-14">
-            <h2 className="text-foreground mb-3">What we stand for</h2>
+            <h2 className="text-foreground text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-3">What we stand for</h2>
             <div className="section-divider" />
           </div>
         </SectionReveal>
@@ -138,8 +138,8 @@ const About = () => (
                 <div className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-primary/12 text-secondary mb-3">
                   <v.icon size={20} strokeWidth={1.8} />
                 </div>
-                <h3 className="text-foreground text-base mb-1">{v.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
+                <h3 className="text-foreground text-xl font-extrabold mb-1.5">{v.title}</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">{v.desc}</p>
               </div>
             </SectionReveal>
           ))}
@@ -152,7 +152,7 @@ const About = () => (
       <div className="container max-w-xl">
         <SectionReveal>
           <div className="text-center mb-14">
-            <h2 className="text-foreground mb-3">Our journey so far</h2>
+            <h2 className="text-foreground text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-3">Our journey so far</h2>
             <div className="section-divider" />
           </div>
         </SectionReveal>
@@ -167,8 +167,8 @@ const About = () => (
             <SectionReveal key={m.year}>
               <div className="relative">
                 <div className="absolute -left-[37px] top-1.5 w-3 h-3 rounded-full bg-primary" />
-                <span className="font-heading font-bold text-secondary text-xs uppercase tracking-wider">{m.year}</span>
-                <p className="text-foreground mt-1 text-sm">{m.text}</p>
+                <span className="font-heading font-bold text-secondary text-base uppercase tracking-wider">{m.year}</span>
+                <p className="text-foreground mt-1.5 text-lg md:text-xl leading-relaxed">{m.text}</p>
               </div>
             </SectionReveal>
           ))}
