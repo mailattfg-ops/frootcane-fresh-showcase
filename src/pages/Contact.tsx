@@ -22,8 +22,10 @@ const formSchema = z.object({
     .min(2, "Name must be at least 2 characters")
     .regex(/^[a-zA-Z\s]*$/, "Name can only contain letters and spaces"),
   email: z.string().email("Please enter a valid email address"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  message: z.string().min(5, "Message must be at least 5 characters"),
 });
+
+const WHATSAPP_NUMBER = "918015165834";
 
 const Contact = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -36,8 +38,18 @@ const Contact = () => {
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-    toast.success("Thanks! We'll get back to you within 24 hours.");
+    const whatsappMessage = [
+      "Hello Frootcane,",
+      "",
+      `Name: ${values.name}`,
+      `Email: ${values.email}`,
+      `Message: ${values.message}`,
+    ].join("\n");
+
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    toast.success("Redirecting to WhatsApp...");
     form.reset();
   };
 
@@ -121,7 +133,9 @@ const Contact = () => {
                   <MapPin size={18} className="text-secondary mt-0.5 shrink-0" />
                   <div>
                     <h3 className="text-foreground text-base mb-0.5">Visit us</h3>
-                    <p className="text-muted-foreground text-sm">123 Green Lane, Fresh City, FC 10001</p>
+                    <p className="text-muted-foreground text-sm">
+                      Fruitcan, Opp Guruvayoor privet Bustand, Guruvayoor, Thrissur, Kerala
+                    </p>
                   </div>
                 </div>
 
@@ -130,8 +144,8 @@ const Contact = () => {
                   <div>
                     <h3 className="text-foreground text-base mb-0.5">Call us</h3>
                     <p className="text-muted-foreground text-sm">
-                      <a href="tel:+15551234567" className="hover:text-secondary transition-colors">
-                        +1 (555) 123-4567
+                      <a href="tel:+918015165834" className="hover:text-secondary transition-colors">
+                        +918015165834
                       </a>
                     </p>
                   </div>
@@ -176,12 +190,13 @@ const Contact = () => {
             <div className="rounded-xl overflow-hidden h-72 bg-muted">
               <iframe
                 title="Frootcane location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503!2d-73.9857!3d40.7484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzU0LjIiTiA3M8KwNTknMDguNSJX!5e0!3m2!1sen!2sus!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d471.70508746262294!2d76.03687123205512!3d10.595533873728392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAddress%20Fruitcan.%20Opp%20Guruvayoor%20privatE%20stand%20Guruvayoor%20Thrissur%20Kerala!5e0!3m2!1sen!2sin!4v1773807918353!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </SectionReveal>

@@ -39,8 +39,13 @@ const Footer = () => (
         <div className="md:col-span-4">
           <h4 className="font-heading text-sm font-bold text-foreground mb-4 uppercase tracking-wider">Contact</h4>
           <address className="not-italic space-y-2.5 text-sm text-muted-foreground">
-            <p>123 Green Lane, Fresh City</p>
-            <p><a href="tel:+15551234567" className="hover:text-secondary transition-colors">+1 (555) 123-4567</a></p>
+            <p>
+              Fruitcan,<br />
+              Opp Guruvayoor privet Bustand,<br />
+              Guruvayoor,<br />
+              Thrissur, Kerala
+            </p>
+            <p><a href="tel:+918015165834" className="hover:text-secondary transition-colors">+918015165834</a></p>
             <p><a href="mailto:hello@frootcane.com" className="hover:text-secondary transition-colors">hello@frootcane.com</a></p>
           </address>
         </div>

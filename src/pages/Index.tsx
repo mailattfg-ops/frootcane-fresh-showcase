@@ -18,7 +18,7 @@ const Index = () => (
             the way it should be.
           </h1>
           <p className="mt-5 text-muted-foreground text-lg leading-relaxed max-w-md mx-auto lg:mx-0 animate-fade-up-delay-1">
-            We press every glass to order using locally sourced sugarcane. No water added, no preservatives, no nonsense — just clean, natural energy that tastes as good as it feels.
+            Started in 2026, Frootcane is a new juice shop focused on health-first sugarcane juices. We press every glass to order with quality ingredients and clean hygiene, so you get natural taste and real refreshment.
           </p>
           <div className="mt-8 animate-fade-up-delay-2">
             <Button asChild variant="cta" size="lg">
@@ -151,7 +151,7 @@ const Index = () => (
             Come try it for yourself
           </h2>
           <p className="text-secondary-foreground/75 mb-7 max-w-md mx-auto text-sm">
-            We're open seven days a week. Walk in, grab a glass, and see what real sugarcane juice tastes like.
+            We're open seven days a week. Visit our new 2026 shop and enjoy fresh, high-quality sugarcane juice made for healthy daily refreshment.
           </p>
           <Button asChild variant="cta" size="lg">
             <Link to="/contact">Find Us</Link>
