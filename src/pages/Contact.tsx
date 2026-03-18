@@ -18,7 +18,8 @@ import {
 } from "@/components/ui/form";
 
 const formSchema = z.object({
-  name: z.string()
+  name: z
+    .string()
     .min(2, "Name must be at least 2 characters")
     .regex(/^[a-zA-Z\s]*$/, "Name can only contain letters and spaces"),
   email: z.string().email("Please enter a valid email address"),
@@ -61,7 +62,9 @@ const Contact = () => {
           <SectionReveal>
             <h1 className="text-foreground mb-4">Get in touch</h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Whether you've got a question about our juices, want to discuss a partnership, or just want to say hello — we'd love to hear from you.
+              Whether you've got a question about our juices, want to discuss a
+              partnership, or just want to say hello — we'd love to hear from
+              you.
             </p>
           </SectionReveal>
         </div>
@@ -73,7 +76,10 @@ const Contact = () => {
           <div className="lg:col-span-3">
             <SectionReveal>
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-5"
+                >
                   <FormField
                     control={form.control}
                     name="name"
@@ -81,7 +87,11 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel>Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Your name" {...field} className="h-11" />
+                          <Input
+                            placeholder="Your name"
+                            {...field}
+                            className="h-11"
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -94,7 +104,11 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="you@example.com" {...field} className="h-11" />
+                          <Input
+                            placeholder="you@example.com"
+                            {...field}
+                            className="h-11"
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -117,7 +131,12 @@ const Contact = () => {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" variant="cta" size="lg" className="w-full sm:w-auto">
+                  <Button
+                    type="submit"
+                    variant="cta"
+                    size="lg"
+                    className="w-full sm:w-auto"
+                  >
                     Send Message
                   </Button>
                 </form>
@@ -130,11 +149,17 @@ const Contact = () => {
             <SectionReveal>
               <div className="space-y-7">
                 <div className="flex items-start gap-3">
-                  <MapPin size={18} className="text-secondary mt-0.5 shrink-0" />
+                  <MapPin
+                    size={18}
+                    className="text-secondary mt-0.5 shrink-0"
+                  />
                   <div>
-                    <h3 className="text-foreground text-base mb-0.5">Visit us</h3>
+                    <h3 className="text-foreground text-base mb-0.5">
+                      Visit us
+                    </h3>
                     <p className="text-muted-foreground text-sm">
-                      Fruitcan, Opp Guruvayoor privet Bustand, Guruvayoor, Thrissur, Kerala
+                      Fruitcan, Opp Guruvayoor privet Bustand, Guruvayoor,
+                      Thrissur, Kerala
                     </p>
                   </div>
                 </div>
@@ -142,9 +167,14 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <Phone size={18} className="text-secondary mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="text-foreground text-base mb-0.5">Call us</h3>
+                    <h3 className="text-foreground text-base mb-0.5">
+                      Call us
+                    </h3>
                     <p className="text-muted-foreground text-sm">
-                      <a href="tel:+918015165834" className="hover:text-secondary transition-colors">
+                      <a
+                        href="tel:+918015165834"
+                        className="hover:text-secondary transition-colors"
+                      >
                         +918015165834
                       </a>
                     </p>
@@ -154,9 +184,14 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <Mail size={18} className="text-secondary mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="text-foreground text-base mb-0.5">Email us</h3>
+                    <h3 className="text-foreground text-base mb-0.5">
+                      Email us
+                    </h3>
                     <p className="text-muted-foreground text-sm">
-                      <a href="mailto:hello@frootcane.com" className="hover:text-secondary transition-colors">
+                      <a
+                        href="mailto:hello@frootcane.com"
+                        className="hover:text-secondary transition-colors"
+                      >
                         hello@frootcane.com
                       </a>
                     </p>
@@ -166,15 +201,22 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <Clock size={18} className="text-secondary mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="text-foreground text-base mb-0.5">Opening hours</h3>
-                    <p className="text-muted-foreground text-sm">Mon – Sat: 8:00 AM – 9:00 PM</p>
-                    <p className="text-muted-foreground text-sm">Sunday: 9:00 AM – 6:00 PM</p>
+                    <h3 className="text-foreground text-base mb-0.5">
+                      Opening hours
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      Mon – Sat: 8:00 AM – 9:00 PM
+                    </p>
+                    <p className="text-muted-foreground text-sm">
+                      Sunday: 9:00 AM – 6:00 PM
+                    </p>
                   </div>
                 </div>
 
                 <div className="pt-4 border-t border-border/60">
                   <p className="text-muted-foreground text-xs leading-relaxed">
-                    Follow us on Instagram @frootcane for daily specials and behind-the-scenes content.
+                    Follow us on Instagram @frootcane for daily specials and
+                    behind-the-scenes content.
                   </p>
                 </div>
               </div>

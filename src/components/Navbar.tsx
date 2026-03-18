@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.jpeg";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -31,7 +31,11 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between h-16 md:h-[72px]">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <img src={logo} alt="Frootcane logo" className="h-9 w-9 transition-transform duration-200 group-hover:scale-105" />
+          <img
+            src={logo}
+            alt="Frootcane logo"
+            className="h-9 w-9 transition-transform duration-200 group-hover:scale-105"
+          />
           <span className="font-heading text-lg font-bold tracking-tight text-foreground">
             Frootcane
           </span>
@@ -85,8 +89,15 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Button asChild variant="cta" size="default" className="w-full mt-2">
-              <Link to="/contact" onClick={() => setOpen(false)}>Get in Touch</Link>
+            <Button
+              asChild
+              variant="cta"
+              size="default"
+              className="w-full mt-2"
+            >
+              <Link to="/contact" onClick={() => setOpen(false)}>
+                Get in Touch
+              </Link>
             </Button>
           </div>
         </div>

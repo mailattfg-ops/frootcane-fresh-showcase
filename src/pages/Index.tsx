@@ -14,11 +14,15 @@ const Index = () => (
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-16 md:py-24 lg:py-32">
         <div className="order-2 lg:order-1 text-center lg:text-left">
           <h1 className="text-foreground animate-fade-up">
-            Fresh sugarcane juice,<br />
+            Fresh sugarcane juice,
+            <br />
             the way it should be.
           </h1>
           <p className="mt-5 text-muted-foreground text-lg leading-relaxed max-w-md mx-auto lg:mx-0 animate-fade-up-delay-1">
-            Started in 2026, Frootcane is a new juice shop focused on health-first sugarcane juices. We press every glass to order with quality ingredients and clean hygiene, so you get natural taste and real refreshment.
+            Started in 2026, Frootcane is a new juice shop focused on
+            health-first sugarcane juices. We press every glass to order with
+            quality ingredients and clean hygiene, so you get natural taste and
+            real refreshment.
           </p>
           <div className="mt-8 animate-fade-up-delay-2">
             <Button asChild variant="cta" size="lg">
@@ -70,7 +74,9 @@ const Index = () => (
                   <item.icon size={22} strokeWidth={1.8} />
                 </div>
                 <h3 className="text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             </SectionReveal>
           ))}
@@ -85,7 +91,8 @@ const Index = () => (
           <div className="text-center mb-14">
             <h2 className="text-foreground mb-3">Our signature juices</h2>
             <p className="text-muted-foreground max-w-lg mx-auto">
-              Three simple recipes, each built around the natural sweetness of fresh sugarcane.
+              Three simple recipes, each built around the natural sweetness of
+              fresh sugarcane.
             </p>
           </div>
         </SectionReveal>
@@ -114,7 +121,9 @@ const Index = () => (
                   {juice.tag}
                 </span>
                 <h3 className="text-foreground mb-2">{juice.name}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed flex-grow">{juice.desc}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed flex-grow">
+                  {juice.desc}
+                </p>
               </div>
             </SectionReveal>
           ))}
@@ -122,8 +131,16 @@ const Index = () => (
 
         <SectionReveal className="mt-14">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            <img src={varietiesImg} alt="A selection of Frootcane juice flavors" className="rounded-xl object-cover w-full h-56" />
-            <img src={shopImg} alt="Inside the Frootcane juice bar" className="rounded-xl object-cover w-full h-56" />
+            <img
+              src={varietiesImg}
+              alt="A selection of Frootcane juice flavors"
+              className="rounded-xl object-cover w-full h-56"
+            />
+            <img
+              src={shopImg}
+              alt="Inside the Frootcane juice bar"
+              className="rounded-xl object-cover w-full h-56"
+            />
           </div>
         </SectionReveal>
       </div>
@@ -133,11 +150,12 @@ const Index = () => (
     <section className="py-16 md:py-20">
       <div className="container max-w-3xl text-center">
         <SectionReveal>
-          <h2 className="text-foreground mb-4">
-            We take hygiene seriously
-          </h2>
+          <h2 className="text-foreground mb-4">We take hygiene seriously</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Every piece of sugarcane is washed, peeled, and inspected before it touches our press. Our equipment is cleaned and sanitised between each batch. We're not just making juice — we're building trust, one glass at a time.
+            Every piece of sugarcane is washed, peeled, and inspected before it
+            touches our press. Our equipment is cleaned and sanitised between
+            each batch. We're not just making juice — we're building trust, one
+            glass at a time.
           </p>
         </SectionReveal>
       </div>
@@ -151,7 +169,9 @@ const Index = () => (
             Come try it for yourself
           </h2>
           <p className="text-secondary-foreground/75 mb-7 max-w-md mx-auto text-sm">
-            We're open seven days a week. Visit our new 2026 shop and enjoy fresh, high-quality sugarcane juice made for healthy daily refreshment.
+            We're open seven days a week. Visit our new 2026 shop and enjoy
+            fresh, high-quality sugarcane juice made for healthy daily
+            refreshment.
           </p>
           <Button asChild variant="cta" size="lg">
             <Link to="/contact">Find Us</Link>
