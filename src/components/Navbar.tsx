@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/Frootcane.png";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -34,11 +34,8 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Frootcane logo"
-            className="h-9 w-9 transition-transform duration-200 group-hover:scale-105"
+            className="h-12 w-auto transition-transform duration-200 group-hover:scale-105"
           />
-          <span className="font-heading text-lg font-bold tracking-tight text-foreground">
-            Frootcane
-          </span>
         </Link>
 
         {/* Desktop */}

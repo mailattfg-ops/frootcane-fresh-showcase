@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/Frootcane.png";
 
 const Footer = () => (
   <footer className="border-t border-border/60 bg-background">
@@ -8,10 +8,7 @@ const Footer = () => (
         {/* Brand */}
         <div className="md:col-span-5">
           <div className="flex items-center gap-2.5 mb-3">
-            <img src={logo} alt="Frootcane" className="h-10 w-10" />
-            <span className="font-heading text-xl font-bold text-foreground">
-              Frootcane
-            </span>
+            <img src={logo} alt="Frootcane" className="h-16 w-auto" />
           </div>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
             Freshly pressed sugarcane juice made the way it should be — simple,
