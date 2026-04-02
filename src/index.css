@@ -6,44 +6,44 @@
 
 @layer base {
   :root {
-    --background: 80 25% 98%;
-    --foreground: 160 12% 12%;
+    --background: 52 18% 95%;
+    --foreground: 154 24% 13%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 160 12% 12%;
+    --card: 0 0% 98%;
+    --card-foreground: 154 24% 13%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 160 12% 12%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 154 24% 13%;
 
-    --primary: 95 48% 56%;
-    --primary-foreground: 160 30% 8%;
+    --primary: 138 58% 32%;
+    --primary-foreground: 50 35% 96%;
 
-    --secondary: 130 42% 28%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 146 50% 22%;
+    --secondary-foreground: 50 35% 96%;
 
-    --muted: 80 18% 95%;
-    --muted-foreground: 160 6% 42%;
+    --muted: 210 14% 90%;
+    --muted-foreground: 210 10% 38%;
 
-    --accent: 42 96% 62%;
+    --accent: 38 88% 55%;
     --accent-foreground: 30 35% 14%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 80 10% 90%;
-    --input: 80 12% 88%;
-    --ring: 95 48% 56%;
+    --border: 210 14% 80%;
+    --input: 210 14% 84%;
+    --ring: 138 58% 32%;
 
     --radius: 0.625rem;
 
-    --sidebar-background: 80 18% 97%;
-    --sidebar-foreground: 160 10% 25%;
-    --sidebar-primary: 130 42% 28%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 80 18% 94%;
-    --sidebar-accent-foreground: 160 10% 15%;
-    --sidebar-border: 80 10% 90%;
-    --sidebar-ring: 95 48% 56%;
+    --sidebar-background: 52 18% 95%;
+    --sidebar-foreground: 154 16% 22%;
+    --sidebar-primary: 138 58% 32%;
+    --sidebar-primary-foreground: 50 35% 96%;
+    --sidebar-accent: 210 14% 89%;
+    --sidebar-accent-foreground: 154 20% 16%;
+    --sidebar-border: 210 14% 80%;
+    --sidebar-ring: 138 58% 32%;
 
     --font-heading: 'Inter Tight', sans-serif;
     --font-body: 'Nunito', sans-serif;
@@ -56,27 +56,27 @@
     --card-foreground: 80 18% 95%;
     --popover: 160 10% 9%;
     --popover-foreground: 80 18% 95%;
-    --primary: 95 48% 56%;
+    --primary: 138 54% 46%;
     --primary-foreground: 160 30% 8%;
-    --secondary: 130 42% 28%;
+    --secondary: 145 44% 30%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 160 8% 14%;
-    --muted-foreground: 80 8% 55%;
+    --muted: 210 10% 16%;
+    --muted-foreground: 210 10% 63%;
     --accent: 42 96% 62%;
     --accent-foreground: 30 35% 14%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 160 8% 18%;
-    --input: 160 8% 18%;
-    --ring: 95 48% 56%;
+    --border: 210 8% 22%;
+    --input: 210 8% 22%;
+    --ring: 138 54% 46%;
     --sidebar-background: 160 10% 7%;
     --sidebar-foreground: 80 18% 90%;
-    --sidebar-primary: 95 48% 56%;
+    --sidebar-primary: 138 54% 46%;
     --sidebar-primary-foreground: 160 30% 8%;
-    --sidebar-accent: 160 8% 14%;
+    --sidebar-accent: 210 10% 16%;
     --sidebar-accent-foreground: 80 18% 90%;
-    --sidebar-border: 160 8% 18%;
-    --sidebar-ring: 95 48% 56%;
+    --sidebar-border: 210 8% 22%;
+    --sidebar-ring: 138 54% 46%;
   }
 }
 
@@ -89,6 +89,22 @@
     @apply bg-background text-foreground font-body antialiased;
     font-size: 16px;
     line-height: 1.7;
+    background-image:
+      radial-gradient(circle at 12% 8%, hsl(var(--primary) / 0.14), transparent 30%),
+      radial-gradient(circle at 88% 2%, hsl(var(--accent) / 0.16), transparent 24%),
+      radial-gradient(circle at 40% 100%, hsl(var(--primary) / 0.1), transparent 38%),
+      linear-gradient(to bottom, hsl(var(--background)), hsl(var(--background)));
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.25);
+    color: hsl(var(--foreground));
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -104,23 +120,52 @@
 
 @layer utilities {
   .animate-fade-up {
-    animation: fadeUp 0.5s ease-out both;
+    animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   .animate-fade-up-delay-1 {
-    animation: fadeUp 0.5s ease-out 0.12s both;
+    animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
   }
   .animate-fade-up-delay-2 {
-    animation: fadeUp 0.5s ease-out 0.24s both;
+    animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
   }
   .section-divider {
     @apply w-12 h-0.5 bg-primary/40 mx-auto;
+  }
+
+  .premium-hero {
+    background:
+      radial-gradient(1200px 500px at 8% -12%, hsl(var(--accent) / 0.26), transparent 58%),
+      radial-gradient(980px 540px at 94% 2%, hsl(var(--primary) / 0.34), transparent 62%),
+      radial-gradient(700px 380px at 55% 120%, hsl(var(--secondary) / 0.18), transparent 72%),
+      linear-gradient(125deg, hsl(var(--muted) / 0.84) 0%, hsl(var(--background)) 38%, hsl(var(--muted) / 0.62) 100%);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 180% 180%;
+    animation: heroGradientShift 14s ease-in-out infinite;
+  }
+
+  .hero-panel {
+    background: linear-gradient(145deg, hsl(var(--card) / 0.92), hsl(var(--card) / 0.74));
+    border: 1px solid hsl(var(--border) / 0.75);
+    box-shadow:
+      0 12px 30px hsl(var(--foreground) / 0.08),
+      inset 0 1px 0 hsl(0 0% 100% / 0.3);
+    backdrop-filter: blur(5px);
+  }
+
+  .hero-image-frame {
+    box-shadow:
+      0 20px 50px hsl(var(--foreground) / 0.16),
+      0 0 0 1px hsl(var(--border) / 0.5);
+  }
+
+  .page-enter {
+    animation: pageEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 }
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -128,6 +173,38 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroGradientShift {
+  0% {
+    background-position: 0% 0%, 100% 0%, 50% 100%, 0% 50%;
+  }
+  50% {
+    background-position: 2% 1%, 98% 2%, 52% 98%, 100% 50%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 0%, 50% 100%, 0% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .premium-hero {
+    animation: none;
+  }
 }

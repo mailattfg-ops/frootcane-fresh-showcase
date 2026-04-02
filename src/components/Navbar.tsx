@@ -29,17 +29,9 @@ const Navbar = () => {
           : "bg-background/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container flex items-center justify-between h-16 md:h-[72px]">
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <img
-            src={logo}
-            alt="Frootcane logo"
-            className="h-12 w-auto transition-transform duration-200 group-hover:scale-105"
-          />
-        </Link>
-
-        {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+      {/* Desktop */}
+      <div className="container hidden md:grid grid-cols-3 items-center h-[72px]">
+        <div className="flex items-center gap-8 justify-self-start">
           {navLinks.map((link) => (
             <Link
               key={link.to}
@@ -53,15 +45,36 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
+        </div>
+
+        <Link to="/" className="flex items-center justify-center group">
+          <img
+            src={logo}
+            alt="Frootcane logo"
+            className="h-12 w-auto transition-transform duration-200 group-hover:scale-105"
+          />
+        </Link>
+
+        <div className="justify-self-end">
           <Button asChild variant="cta" size="sm">
             <Link to="/contact">Get in Touch</Link>
           </Button>
         </div>
+      </div>
 
-        {/* Mobile toggle */}
+      {/* Mobile bar */}
+      <div className="container flex items-center h-16 md:hidden">
+        <Link to="/" className="flex items-center group">
+          <img
+            src={logo}
+            alt="Frootcane logo"
+            className="h-11 w-auto transition-transform duration-200 group-hover:scale-105"
+          />
+        </Link>
+
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden p-2 text-foreground hover:text-secondary transition-colors"
+          className="ml-auto p-2 text-foreground hover:text-secondary transition-colors"
           aria-label="Toggle menu"
         >
           {open ? <X size={22} /> : <Menu size={22} />}

@@ -10,31 +10,35 @@ import shopImg from "@/assets/gallery-shop.jpg";
 const Index = () => (
   <Layout>
     {/* Hero */}
-    <section className="relative overflow-hidden bg-muted">
-      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-16 md:py-24 lg:py-32">
-        <div className="order-2 lg:order-1 text-center lg:text-left">
-          <h1 className="text-foreground animate-fade-up">
-            Fresh sugarcane juice,
-            <br />
-            the way it should be.
-          </h1>
-          <p className="mt-5 text-muted-foreground text-lg leading-relaxed max-w-md mx-auto lg:mx-0 animate-fade-up-delay-1">
-            Started in 2026, Frootcane is a new juice shop focused on
-            health-first sugarcane juices. We press every glass to order with
-            quality ingredients and clean hygiene, so you get natural taste and
-            real refreshment.
-          </p>
-          <div className="mt-8 animate-fade-up-delay-2">
-            <Button asChild variant="cta" size="lg">
-              <Link to="/about">Discover Our Juices</Link>
-            </Button>
+    <section className="relative overflow-hidden premium-hero">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 items-center lg:items-stretch py-14 md:py-20 lg:py-24">
+        <div className="order-2 lg:order-1 text-center lg:text-left h-full">
+          <div className="hero-panel rounded-2xl p-6 md:p-8 lg:p-10 h-full flex flex-col justify-center">
+            <h1 className="text-foreground animate-fade-up">
+              Fresh sugarcane juice,
+              <br />
+              the way it should be.
+            </h1>
+            <p className="mt-5 text-muted-foreground text-lg leading-relaxed max-w-md mx-auto lg:mx-0 animate-fade-up-delay-1">
+              Started in 2026, Frootcane is a new juice shop focused on
+              health-first sugarcane juices. We press every glass to order with
+              quality ingredients and clean hygiene, so you get natural taste and
+              real refreshment.
+            </p>
+            <div className="mt-8 animate-fade-up-delay-2">
+              <Button asChild variant="cta" size="lg">
+                <Link to="/about">Discover Our Juices</Link>
+              </Button>
+            </div>
           </div>
         </div>
-        <div className="order-1 lg:order-2 animate-fade-up">
+        <div className="order-1 lg:order-2 animate-fade-up h-full">
           <img
             src={heroImg}
             alt="A glass of fresh sugarcane juice with mint garnish on a marble counter"
-            className="w-full rounded-2xl object-cover aspect-[4/3] lg:aspect-[3/4] max-h-[520px]"
+            className="w-full h-full rounded-2xl object-cover aspect-[4/3] lg:aspect-auto min-h-[340px] md:min-h-[420px] lg:min-h-[560px] hero-image-frame"
+            fetchPriority="high"
+            decoding="async"
           />
         </div>
       </div>
@@ -135,11 +139,15 @@ const Index = () => (
               src={varietiesImg}
               alt="A selection of Frootcane juice flavors"
               className="rounded-xl object-cover w-full h-56"
+              loading="lazy"
+              decoding="async"
             />
             <img
               src={shopImg}
               alt="Inside the Frootcane juice bar"
               className="rounded-xl object-cover w-full h-56"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </SectionReveal>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Facebook, Instagram, MessageCircle } from "lucide-react";
 import logo from "@/assets/Frootcane.png";
 
 const Footer = () => (
@@ -31,6 +32,7 @@ const Footer = () => (
               <li key={l.to}>
                 <Link
                   to={l.to}
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   className="text-muted-foreground text-sm hover:text-secondary transition-colors duration-200"
                 >
                   {l.label}
@@ -47,9 +49,9 @@ const Footer = () => (
           </h4>
           <address className="not-italic space-y-2.5 text-sm text-muted-foreground">
             <p>
-              Fruitcan,
+              Frootcane,
               <br />
-              Opp Guruvayoor privet Bustand,
+              Opp Guruvayoor Private Bus Stand,
               <br />
               Guruvayoor,
               <br />
@@ -72,6 +74,36 @@ const Footer = () => (
               </a>
             </p>
           </address>
+
+          <div className="mt-5 flex items-center gap-3">
+            <a
+              href="https://www.instagram.com/frootcane"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Frootcane on Instagram"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 text-muted-foreground hover:text-secondary hover:border-secondary transition-colors"
+            >
+              <Instagram size={17} />
+            </a>
+            <a
+              href="https://www.facebook.com/frootcane"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Frootcane on Facebook"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 text-muted-foreground hover:text-secondary hover:border-secondary transition-colors"
+            >
+              <Facebook size={17} />
+            </a>
+            <a
+              href="https://wa.me/918015165834"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Chat with Frootcane on WhatsApp"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 text-muted-foreground hover:text-secondary hover:border-secondary transition-colors"
+            >
+              <MessageCircle size={17} />
+            </a>
+          </div>
         </div>
       </div>
 

@@ -158,7 +158,7 @@ const Contact = () => {
                       Visit us
                     </h3>
                     <p className="text-muted-foreground text-sm">
-                      Fruitcan, Opp Guruvayoor privet Bustand, Guruvayoor,
+                      Frootcane, Opp Guruvayoor Private Bus Stand, Guruvayoor,
                       Thrissur, Kerala
                     </p>
                   </div>
@@ -232,7 +232,7 @@ const Contact = () => {
             <div className="rounded-xl overflow-hidden h-72 bg-muted">
               <iframe
                 title="Frootcane location"
-                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d471.70508746262294!2d76.03687123205512!3d10.595533873728392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAddress%20Fruitcan.%20Opp%20Guruvayoor%20privatE%20stand%20Guruvayoor%20Thrissur%20Kerala!5e0!3m2!1sen!2sin!4v1773807918353!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d471.70508746262294!2d76.03687123205512!3d10.595533873728392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAddress%20Frootcane.%20Opp%20Guruvayoor%20Private%20Bus%20Stand%20Guruvayoor%20Thrissur%20Kerala!5e0!3m2!1sen!2sin!4v1773807918353!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
