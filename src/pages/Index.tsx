@@ -22,8 +22,8 @@ const Index = () => (
             <p className="mt-5 text-muted-foreground text-lg leading-relaxed max-w-md mx-auto lg:mx-0 animate-fade-up-delay-1">
               Started in 2026, Frootcane is a new juice shop focused on
               health-first sugarcane juices. We press every glass to order with
-              quality ingredients and clean hygiene, so you get natural taste and
-              real refreshment.
+              quality ingredients and clean hygiene, so you get natural taste
+              and real refreshment.
             </p>
             <div className="mt-8 animate-fade-up-delay-2">
               <Button asChild variant="cta" size="lg">

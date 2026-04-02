@@ -13,7 +13,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main key={pathname} className="flex-1 page-enter">{children}</main>
+      <main key={pathname} className="flex-1 page-enter">
+        {children}
+      </main>
       <Footer />
     </div>
   );

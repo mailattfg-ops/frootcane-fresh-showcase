@@ -18,7 +18,7 @@ const SectionReveal = forwardRef<HTMLDivElement, SectionRevealProps>(
             observer.disconnect();
           }
         },
-        { threshold: 0.12 }
+        { threshold: 0.12 },
       );
       if (innerRef.current) observer.observe(innerRef.current);
       return () => observer.disconnect();
@@ -36,7 +36,7 @@ const SectionReveal = forwardRef<HTMLDivElement, SectionRevealProps>(
         {children}
       </div>
     );
-  }
+  },
 );
 
 SectionReveal.displayName = "SectionReveal";
