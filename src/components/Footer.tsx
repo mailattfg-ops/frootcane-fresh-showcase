@@ -1,121 +1,159 @@
-import { Link } from "react-router-dom";
-import { Facebook, Instagram, MessageCircle } from "lucide-react";
-import logo from "@/assets/Frootcane.png";
+import Link from "next/link";
+import Image from "next/image";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
-const Footer = () => (
-  <footer className="border-t border-border/60 bg-background">
-    <div className="container py-14 md:py-18">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
-        {/* Brand */}
-        <div className="md:col-span-5">
-          <div className="flex items-center gap-2.5 mb-3">
-            <img src={logo} alt="Frootcane" className="h-16 w-auto" />
+const pages = [
+  { label: "Home", href: "#home" },
+  { label: "About Us", href: "#about" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Reach Out", href: "#contact" },
+];
+
+const contact = {
+  address: "Frootcane, Opp Guruvayoor Private Bus Stand, Guruvayoor, Thrissur, Kerala",
+  phone: "+918015165834",
+  email: "hello@frootcane.com",
+};
+
+export default function Footer() {
+  return (
+    <footer className="relative isolate overflow-hidden border-t border-[#3f7f2f] bg-[#2c6a1e] text-[#eaf4dd]">
+      <div className="absolute -left-20 top-8 h-56 w-56 rounded-full bg-green-300/20 blur-3xl" />
+      <div className="absolute -right-20 bottom-8 h-56 w-56 rounded-full bg-lime-300/20 blur-3xl" />
+
+      <div className="relative mx-auto w-full px-6 py-8 sm:py-10">
+        <div className="mb-6 grid grid-cols-1 gap-7 md:grid-cols-3">
+          <div>
+            <div className="mb-4 flex items-center gap-3">
+              <Image
+                src="/Frootcane with trade mark.png"
+                alt="Frootcane logo"
+                width={168}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </div>
+            <p className="max-w-xs text-sm leading-relaxed text-[#edf6e1]">
+              Freshly pressed sugarcane juice made the way it should be — simple, clean, and full of flavour. No
+              shortcuts, no compromises.
+            </p>
+            <div className="mt-4 flex items-center gap-3 text-green-700">
+              <a
+                href="https://wa.me/918015165834"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#91bf6e] bg-[#e8f5d6] transition hover:bg-white"
+                aria-label="WhatsApp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle size={18} />
+              </a>
+              <a
+                href={`mailto:${contact.email}`}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#91bf6e] bg-[#e8f5d6] transition hover:bg-white"
+                aria-label="Email"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Mail size={18} />
+              </a>
+              <a
+                href={`tel:${contact.phone}`}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#91bf6e] bg-[#e8f5d6] transition hover:bg-white"
+                aria-label="Call"
+              >
+                <Phone size={18} />
+              </a>
+              <a
+                href="https://instagram.com"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#91bf6e] bg-[#e8f5d6] transition hover:bg-white"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" className="h-4.5 w-4.5 text-[#214a19]" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+              <a
+                href="https://youtube.com"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#91bf6e] bg-[#e8f5d6] transition hover:bg-white"
+                aria-label="YouTube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" className="h-4.5 w-4.5 text-[#214a19]" fill="currentColor" aria-hidden="true">
+                  <path d="M21.1 7.2a2.9 2.9 0 0 0-2-2C17.4 4.7 12 4.7 12 4.7s-5.4 0-7.1.5a2.9 2.9 0 0 0-2 2C2.4 8.9 2.4 12 2.4 12s0 3.1.5 4.8a2.9 2.9 0 0 0 2 2c1.7.5 7.1.5 7.1.5s5.4 0 7.1-.5a2.9 2.9 0 0 0 2-2c.5-1.7.5-4.8.5-4.8s0-3.1-.5-4.8Zm-11.3 7.7V9.1l5 2.9-5 2.9Z" />
+                </svg>
+              </a>
+            </div>
           </div>
-          <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
-            Freshly pressed sugarcane juice made the way it should be — simple,
-            clean, and full of flavour. No shortcuts, no compromises.
+
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d8efbc]">Pages</p>
+            <ul className="space-y-3">
+              {pages.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-sm text-[#edf6e1] transition hover:text-[#d4ecb5]">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d8efbc]">Contact</p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <MapPin size={17} className="mt-0.5 text-[#d4ecb5]" />
+                <div>
+                  <p className="mb-1 text-xs uppercase tracking-widest text-[#cde6b1]">Address</p>
+                  <p className="text-sm text-[#edf6e1]">{contact.address}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Phone size={17} className="mt-0.5 text-[#d4ecb5]" />
+                <div>
+                  <p className="mb-1 text-xs uppercase tracking-widest text-[#cde6b1]">Phone</p>
+                  <a href={`tel:${contact.phone}`} className="text-sm text-[#edf6e1] transition hover:text-[#d4ecb5]">
+                    {contact.phone}
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Mail size={17} className="mt-0.5 text-[#d4ecb5]" />
+                <div>
+                  <p className="mb-1 text-xs uppercase tracking-widest text-[#cde6b1]">Email</p>
+                  <a href={`mailto:${contact.email}`} className="text-sm text-[#edf6e1] transition hover:text-[#d4ecb5]">
+                    {contact.email}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center pb-3">
+          <div className="h-1 w-28 rounded-full bg-linear-to-r from-lime-200/20 via-lime-100/80 to-lime-200/20" />
+        </div>
+
+        <div className="flex flex-col items-center justify-center gap-3 border-t border-white/15 pt-5 text-center">
+          <p className="text-xs text-[#d0e4bb]">
+            Powered by{" "}
+            <a
+              href="https://thinforglobal.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[#edf6e1] underline decoration-[#cfe4b8]/80 underline-offset-3 transition hover:text-white"
+            >
+              Think Forge Global
+            </a>
           </p>
-        </div>
-
-        {/* Links */}
-        <div className="md:col-span-3">
-          <h4 className="font-heading text-sm font-bold text-foreground mb-4 uppercase tracking-wider">
-            Pages
-          </h4>
-          <ul className="space-y-2.5">
-            {[
-              { label: "Home", to: "/" },
-              { label: "About", to: "/about" },
-              { label: "Gallery", to: "/gallery" },
-              { label: "Contact", to: "/contact" },
-            ].map((l) => (
-              <li key={l.to}>
-                <Link
-                  to={l.to}
-                  onClick={() =>
-                    window.scrollTo({ top: 0, behavior: "smooth" })
-                  }
-                  className="text-muted-foreground text-sm hover:text-secondary transition-colors duration-200"
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Contact */}
-        <div className="md:col-span-4">
-          <h4 className="font-heading text-sm font-bold text-foreground mb-4 uppercase tracking-wider">
-            Contact
-          </h4>
-          <address className="not-italic space-y-2.5 text-sm text-muted-foreground">
-            <p>
-              Frootcane,
-              <br />
-              Opp Guruvayoor Private Bus Stand,
-              <br />
-              Guruvayoor,
-              <br />
-              Thrissur, Kerala
-            </p>
-            <p>
-              <a
-                href="tel:+918015165834"
-                className="hover:text-secondary transition-colors"
-              >
-                +918015165834
-              </a>
-            </p>
-            <p>
-              <a
-                href="mailto:hello@frootcane.com"
-                className="hover:text-secondary transition-colors"
-              >
-                hello@frootcane.com
-              </a>
-            </p>
-          </address>
-
-          <div className="mt-5 flex items-center gap-3">
-            <a
-              href="https://www.instagram.com/frootcane"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Frootcane on Instagram"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 text-muted-foreground hover:text-secondary hover:border-secondary transition-colors"
-            >
-              <Instagram size={17} />
-            </a>
-            <a
-              href="https://www.facebook.com/frootcane"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Frootcane on Facebook"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 text-muted-foreground hover:text-secondary hover:border-secondary transition-colors"
-            >
-              <Facebook size={17} />
-            </a>
-            <a
-              href="https://wa.me/918015165834"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Chat with Frootcane on WhatsApp"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 text-muted-foreground hover:text-secondary hover:border-secondary transition-colors"
-            >
-              <MessageCircle size={17} />
-            </a>
-          </div>
+          <p className="text-xs text-[#e3f0d4]">© {new Date().getFullYear()} Frootcane. All rights reserved.</p>
         </div>
       </div>
-
-      <div className="mt-12 pt-6 border-t border-border/60 text-center">
-        <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Frootcane. All rights reserved.
-        </p>
-      </div>
-    </div>
-  </footer>
-);
-
-export default Footer;
+    </footer>
+  );
+}

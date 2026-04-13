@@ -1,119 +1,217 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+"use client";
+
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/Frootcane.png";
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Gallery", to: "/gallery" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Contact", href: "#contact" },
 ];
 
-const Navbar = () => {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const [visible, setVisible] = useState(true);
+  const [inHomeSection, setInHomeSection] = useState(true);
+  const hideTimerRef = useRef<number | null>(null);
+  const lastScrollYRef = useRef(0);
+  const [homeLink, aboutLink, galleryLink, contactLink] = navLinks;
+
+  const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith("#")) {
+      return;
+    }
+
+    const target = document.querySelector<HTMLElement>(href);
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", href);
+    setOpen(false);
+  };
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const clearHideTimer = () => {
+      if (hideTimerRef.current !== null) {
+        window.clearTimeout(hideTimerRef.current);
+        hideTimerRef.current = null;
+      }
+    };
+
+    const scheduleHide = (delay: number) => {
+      clearHideTimer();
+      hideTimerRef.current = window.setTimeout(() => {
+        setVisible(false);
+      }, delay);
+    };
+
+    const onMouseMove = (event: MouseEvent) => {
+      if (inHomeSection) {
+        setVisible(true);
+        return;
+      }
+
+      if (event.clientY < 120) {
+        setVisible(true);
+        scheduleHide(2200);
+      }
+    };
+
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      const scrollingUp = currentY < lastScrollYRef.current;
+      let stillInHome = inHomeSection;
+
+      const homeSection = document.getElementById("home");
+      if (homeSection) {
+        const rect = homeSection.getBoundingClientRect();
+        stillInHome = rect.top <= 120 && rect.bottom >= 220;
+        setInHomeSection(stillInHome);
+      }
+
+      if (stillInHome) {
+        clearHideTimer();
+        setVisible(true);
+        lastScrollYRef.current = currentY;
+        return;
+      }
+
+      if (currentY < 40) {
+        setVisible(true);
+        scheduleHide(2400);
+      } else if (scrollingUp) {
+        setVisible(true);
+        scheduleHide(1800);
+      } else {
+        scheduleHide(700);
+      }
+
+      lastScrollYRef.current = currentY;
+    };
+
+    if (!inHomeSection) {
+      scheduleHide(2400);
+    }
+    window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    onScroll();
+
+    return () => {
+      clearHideTimer();
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [inHomeSection]);
 
   return (
-    <nav
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm"
-          : "bg-background/80 backdrop-blur-sm"
-      }`}
+    <header
+      className={`fixed left-0 right-0 top-0 z-50 transition-transform duration-300 ${visible || open ? "translate-y-0" : "-translate-y-full"}`}
+      onMouseEnter={() => setVisible(true)}
+      onMouseLeave={() => {
+        if (!open) {
+          hideTimerRef.current = window.setTimeout(() => setVisible(false), 900);
+        }
+      }}
     >
-      {/* Desktop */}
-      <div className="container hidden md:grid grid-cols-3 items-center h-[72px]">
-        <div className="flex items-center gap-8 justify-self-start">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`font-body text-sm font-medium transition-colors duration-200 hover:text-secondary ${
-                location.pathname === link.to
-                  ? "text-secondary"
-                  : "text-muted-foreground"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-
-        <Link to="/" className="flex items-center justify-center group">
-          <img
-            src={logo}
-            alt="Frootcane logo"
-            className="h-12 w-auto transition-transform duration-200 group-hover:scale-105"
-          />
-        </Link>
-
-        <div className="justify-self-end">
-          <Button asChild variant="cta" size="sm">
-            <Link to="/contact">Get in Touch</Link>
-          </Button>
-        </div>
-      </div>
-
-      {/* Mobile bar */}
-      <div className="container flex items-center h-16 md:hidden">
-        <Link to="/" className="flex items-center group">
-          <img
-            src={logo}
-            alt="Frootcane logo"
-            className="h-11 w-auto transition-transform duration-200 group-hover:scale-105"
-          />
-        </Link>
-
-        <button
-          onClick={() => setOpen(!open)}
-          className="ml-auto p-2 text-foreground hover:text-secondary transition-colors"
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden bg-background border-t border-border/60">
-          <div className="container py-4 space-y-3">
-            {navLinks.map((link) => (
+      <div className="w-full px-0">
+        <div className="relative border-y border-[#cadcb7] bg-linear-to-r from-[#f6f8ef] via-[#edf5e3] to-[#e8f1dc] py-4 shadow-[0_8px_18px_rgba(57,88,38,0.14)]">
+          <div className="mx-auto hidden max-w-7xl items-center justify-center lg:flex">
+            <nav className="flex w-full items-center justify-center gap-14 px-8">
               <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setOpen(false)}
-                className={`block font-body text-base font-medium py-1 transition-colors ${
-                  location.pathname === link.to
-                    ? "text-secondary"
-                    : "text-muted-foreground"
-                }`}
+                href={homeLink.href}
+                onClick={(event) => handleNavClick(event, homeLink.href)}
+                className="font-condensed text-[1.25rem] font-medium tracking-[0.06em] text-[#253d1f] transition duration-300 hover:text-[#3c6a2f]"
               >
-                {link.label}
+                {homeLink.label}
               </Link>
-            ))}
-            <Button
-              asChild
-              variant="cta"
-              size="default"
-              className="w-full mt-2"
+              <Link
+                href={aboutLink.href}
+                onClick={(event) => handleNavClick(event, aboutLink.href)}
+                className="font-condensed text-[1.25rem] font-medium tracking-[0.06em] text-[#253d1f] transition duration-300 hover:text-[#3c6a2f]"
+              >
+                {aboutLink.label}
+              </Link>
+
+              <span className="w-44" />
+
+              <Link
+                href={galleryLink.href}
+                onClick={(event) => handleNavClick(event, galleryLink.href)}
+                className="font-condensed text-[1.25rem] font-medium tracking-[0.06em] text-[#253d1f] transition duration-300 hover:text-[#3c6a2f]"
+              >
+                {galleryLink.label}
+              </Link>
+              <Link
+                href={contactLink.href}
+                onClick={(event) => handleNavClick(event, contactLink.href)}
+                className="rounded-full border border-[#3f6e2f] bg-linear-to-r from-[#2f5e24] to-[#3c702c] px-6 py-2.5 font-condensed text-[1.1rem] font-semibold tracking-[0.1em] text-[#f7f7f1] shadow-[0_10px_20px_rgba(36,68,29,0.26)] transition duration-300 hover:-translate-y-0.5 hover:from-[#29551f] hover:to-[#356526]"
+              >
+                {contactLink.label}
+              </Link>
+            </nav>
+          </div>
+
+          <Link
+            href="#home"
+            onClick={(event) => handleNavClick(event, "#home")}
+            className="absolute left-1/2 top-[64%] hidden -translate-x-1/2 -translate-y-1/2 items-center justify-center lg:flex"
+          >
+            <span className="inline-flex h-28 w-28 items-center justify-center rounded-full border-[3px] border-[#9fc781] bg-linear-to-b from-[#fefff8] to-[#edf5df] shadow-[0_12px_24px_rgba(51,83,36,0.26)] ring-4 ring-[#ecf4df]/75">
+              <Image
+                src="/Frootcane with trade mark.png"
+                alt="Frootcane logo"
+                width={190}
+                height={44}
+                className="h-auto w-20 max-w-none"
+                priority
+              />
+            </span>
+          </Link>
+
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:hidden">
+            <Link href="#home" onClick={(event) => handleNavClick(event, "#home")} className="flex items-center">
+              <Image
+                src="/Frootcane with trade mark.png"
+                alt="Frootcane logo"
+                width={190}
+                height={46}
+                className="h-11 w-auto rounded-md border border-[#d3e5bf] bg-linear-to-b from-[#fbfcf7] to-[#eff7e4] px-2 py-1 shadow-[0_6px_12px_rgba(46,73,33,0.15)]"
+                priority
+              />
+            </Link>
+            <button
+              onClick={() => setOpen((prev) => !prev)}
+              className="rounded border border-[#b9d39f] bg-[#f4f9ec] p-2 text-[#264621] transition hover:bg-[#eaf3de]"
+              aria-label="Toggle menu"
             >
-              <Link to="/contact" onClick={() => setOpen(false)}>
-                Get in Touch
-              </Link>
-            </Button>
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </div>
-      )}
-    </nav>
-  );
-};
 
-export default Navbar;
+        {open && (
+          <div className="mx-2 mt-2 rounded-2xl border border-[#cfe1bd] bg-[#fafbf6]/95 px-5 py-4 shadow-[0_12px_22px_rgba(46,73,33,0.14)] backdrop-blur-sm lg:hidden">
+            <nav className="flex flex-col gap-3">
+              {navLinks.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={(event) => handleNavClick(event, item.href)}
+                  className="font-condensed text-[1.08rem] font-medium tracking-[0.05em] text-[#2a4523] transition duration-300 hover:text-[#3f6f31]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+}
