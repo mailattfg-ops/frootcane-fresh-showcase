@@ -14,7 +14,8 @@ const calSans = Cal_Sans({
 
 export const metadata: Metadata = {
   title: "Frootcane — Fresh Sugarcane Juice",
-  description: "Frootcane offers freshly pressed sugarcane juice made from 100% natural ingredients. Pure energy, no preservatives. Fresh, clean, and full of flavour.",
+  description:
+    "Frootcane offers freshly pressed sugarcane juice made from 100% natural ingredients. Pure energy, no preservatives. Fresh, clean, and full of flavour.",
   icons: {
     icon: "/Frootcane with trade mark.png",
   },

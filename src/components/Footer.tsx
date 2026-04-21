@@ -10,7 +10,8 @@ const pages = [
 ];
 
 const contact = {
-  address: "Frootcane, Opp Guruvayoor Private Bus Stand, Guruvayoor, Thrissur, Kerala",
+  address:
+    "Frootcane, Opp Guruvayoor Private Bus Stand, Guruvayoor, Thrissur, Kerala",
   phone: "+918015165834",
   email: "hello@frootcane.com",
 };
@@ -34,8 +35,8 @@ export default function Footer() {
               />
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-[#edf6e1]">
-              Freshly pressed sugarcane juice made the way it should be — simple, clean, and full of flavour. No
-              shortcuts, no compromises.
+              Freshly pressed sugarcane juice made the way it should be —
+              simple, clean, and full of flavour. No shortcuts, no compromises.
             </p>
             <div className="mt-4 flex items-center gap-3 text-green-700">
               <a
@@ -70,21 +71,41 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <svg viewBox="0 0 24 24" className="h-4.5 w-4.5 text-[#214a19]" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-4.5 w-4.5 text-[#214a19]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.9"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
                   <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
                   <circle cx="12" cy="12" r="4" />
-                  <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
+                  <circle
+                    cx="17.2"
+                    cy="6.8"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
                 </svg>
               </a>
             </div>
           </div>
 
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d8efbc]">Pages</p>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d8efbc]">
+              Pages
+            </p>
             <ul className="space-y-3">
               {pages.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-[#edf6e1] transition hover:text-[#d4ecb5]">
+                  <Link
+                    href={link.href}
+                    className="text-sm text-[#edf6e1] transition hover:text-[#d4ecb5]"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -93,20 +114,29 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d8efbc]">Contact</p>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d8efbc]">
+              Contact
+            </p>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin size={17} className="mt-0.5 text-[#d4ecb5]" />
                 <div>
-                  <p className="mb-1 text-xs uppercase tracking-widest text-[#cde6b1]">Address</p>
+                  <p className="mb-1 text-xs uppercase tracking-widest text-[#cde6b1]">
+                    Address
+                  </p>
                   <p className="text-sm text-[#edf6e1]">{contact.address}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Phone size={17} className="mt-0.5 text-[#d4ecb5]" />
                 <div>
-                  <p className="mb-1 text-xs uppercase tracking-widest text-[#cde6b1]">Phone</p>
-                  <a href={`tel:${contact.phone}`} className="text-sm text-[#edf6e1] transition hover:text-[#d4ecb5]">
+                  <p className="mb-1 text-xs uppercase tracking-widest text-[#cde6b1]">
+                    Phone
+                  </p>
+                  <a
+                    href={`tel:${contact.phone}`}
+                    className="text-sm text-[#edf6e1] transition hover:text-[#d4ecb5]"
+                  >
                     {contact.phone}
                   </a>
                 </div>
@@ -114,8 +144,13 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <Mail size={17} className="mt-0.5 text-[#d4ecb5]" />
                 <div>
-                  <p className="mb-1 text-xs uppercase tracking-widest text-[#cde6b1]">Email</p>
-                  <a href={`mailto:${contact.email}`} className="text-sm text-[#edf6e1] transition hover:text-[#d4ecb5]">
+                  <p className="mb-1 text-xs uppercase tracking-widest text-[#cde6b1]">
+                    Email
+                  </p>
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="text-sm text-[#edf6e1] transition hover:text-[#d4ecb5]"
+                  >
                     {contact.email}
                   </a>
                 </div>
@@ -140,7 +175,9 @@ export default function Footer() {
               Think Forge Global
             </a>
           </p>
-          <p className="text-xs text-[#e3f0d4]">© {new Date().getFullYear()} Frootcane. All rights reserved.</p>
+          <p className="text-xs text-[#e3f0d4]">
+            © {new Date().getFullYear()} Frootcane. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
