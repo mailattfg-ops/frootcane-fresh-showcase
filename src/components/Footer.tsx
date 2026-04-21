@@ -76,17 +76,6 @@ export default function Footer() {
                   <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
                 </svg>
               </a>
-              <a
-                href="https://youtube.com"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#91bf6e] bg-[#e8f5d6] transition hover:bg-white"
-                aria-label="YouTube"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg viewBox="0 0 24 24" className="h-4.5 w-4.5 text-[#214a19]" fill="currentColor" aria-hidden="true">
-                  <path d="M21.1 7.2a2.9 2.9 0 0 0-2-2C17.4 4.7 12 4.7 12 4.7s-5.4 0-7.1.5a2.9 2.9 0 0 0-2 2C2.4 8.9 2.4 12 2.4 12s0 3.1.5 4.8a2.9 2.9 0 0 0 2 2c1.7.5 7.1.5 7.1.5s5.4 0 7.1-.5a2.9 2.9 0 0 0 2-2c.5-1.7.5-4.8.5-4.8s0-3.1-.5-4.8Zm-11.3 7.7V9.1l5 2.9-5 2.9Z" />
-                </svg>
-              </a>
             </div>
           </div>
 
@@ -143,7 +132,7 @@ export default function Footer() {
           <p className="text-xs text-[#d0e4bb]">
             Powered by{" "}
             <a
-              href="https://thinforglobal.com"
+              href="https://www.thinkforgeglobal.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-[#edf6e1] underline decoration-[#cfe4b8]/80 underline-offset-3 transition hover:text-white"

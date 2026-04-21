@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function CardSection() {
   return (
     <section className="relative overflow-hidden bg-transparent py-2 sm:py-4">
-      <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+      <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
         <div className="item-reveal">
           <h3 className="font-slab text-5xl font-bold tracking-[0.02em] text-[#1b2f1a] sm:text-6xl">About Frootcane</h3>
           <div className="mt-3 h-1 w-32 rounded-full bg-[#315f23]" />
@@ -17,7 +17,7 @@ export default function CardSection() {
           </p>
         </div>
 
-        <div className="relative item-reveal min-h-[24rem] sm:min-h-[29rem]">
+        <div className="relative item-reveal min-h-[24rem] sm:min-h-[29rem] lg:ml-6">
           <div className="absolute -right-16 top-3 h-72 w-72 rounded-[52%_48%_44%_56%/57%_44%_56%_43%] bg-[#efb09b]/80" />
           <div className="absolute -left-14 bottom-2 h-52 w-52 rounded-[50%_50%_65%_35%/42%_58%_42%_58%] bg-[#f1ba9f]/85" />
 
