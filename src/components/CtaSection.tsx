@@ -70,7 +70,7 @@ export default function CtaSection() {
   return (
     <section id="contact" className="bg-[#f7f3e6] px-5 pb-10 pt-2 sm:px-6 sm:pb-12 sm:pt-3 lg:pb-14 lg:pt-4">
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-5 text-center font-slab text-5xl font-bold text-[#1e3818] sm:text-6xl">Contact Us</h2>
+        <h2 className="mb-5 text-center font-slab text-5xl font-bold text-[#2c6a1e] sm:text-6xl">Contact Us</h2>
 
         <div className="item-reveal rounded-[2.1rem] border border-[#d3e4c3] bg-linear-to-br from-white/95 via-[#f8fbf2] to-[#f3f8ea] p-4 shadow-[0_22px_40px_rgba(45,84,29,0.14)] ring-1 ring-[#edf4e4] sm:p-6">
           <div className="grid gap-5 lg:grid-cols-[1.55fr_0.85fr]">

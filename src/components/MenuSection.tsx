@@ -58,7 +58,7 @@ export default function MenuSection() {
           <p className="font-condensed text-lg uppercase tracking-[0.2em] text-[#3c6a2f]">
             Fresh & Handcrafted
           </p>
-          <h2 className="mt-2 font-slab text-5xl font-bold text-[#1f2e18] sm:text-6xl">
+          <h2 className="mt-2 font-slab text-5xl font-bold text-[#2c6a1e] sm:text-6xl">
             Our Menu
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-[#56614b]">
@@ -124,7 +124,7 @@ export default function MenuSection() {
                 <div>
                   <div className="flex items-start justify-between gap-4">
                     {/* Item Name */}
-                    <h3 className="font-slab text-xl font-bold text-[#1f2e18] group-hover:text-[#2c6a1e] transition-colors duration-300">
+                    <h3 className="font-slab text-xl font-bold text-[#2c6a1e] transition-colors duration-300">
                       {item.name}
                     </h3>
                     {/* Badge */}

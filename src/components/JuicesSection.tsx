@@ -58,7 +58,7 @@ export default function JuicesSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-6 text-center sm:mb-7">
           <p className="font-condensed text-xl uppercase tracking-[0.2em] text-green-700">Gallery</p>
-          <h2 className="mt-2 font-slab text-5xl font-bold text-[#1f2e18] sm:text-6xl">Frootcane Moments</h2>
+          <h2 className="mt-2 font-slab text-5xl font-bold text-[#2c6a1e] sm:text-6xl">Frootcane Moments</h2>
           <p className="mx-auto mt-3 max-w-3xl text-[1.06rem] leading-8 text-[#56614b]">
             A live look at our drinks, counter, and daily fresh sugarcane service.
           </p>

@@ -8,12 +8,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1a1a1a;
-  --cream: #f9f7f0;
-  --mint: #e7f3d9;
-  --leaf: #4f8f2f;
-  --deep-leaf: #1f4f1a;
-  --support: #efe9dc;
+  --foreground: #2c6a1e;
+  --cream: #fafbe2;
+  --mint: #eef7d3;
+  --leaf: #2c6a1e;
+  --deep-leaf: #2c6a1e;
+  --support: #faf6e8;
 }
 
 html {
@@ -38,7 +38,7 @@ body.is-loading {
 body {
   min-height: 100vh;
   color: var(--foreground);
-  background: linear-gradient(180deg, #ffffff 0%, #f4f9ef 70%, #f7f4ec 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f7fae0 70%, #faf7e3 100%);
   font-family: var(--font-sans), "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

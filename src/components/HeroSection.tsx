@@ -52,7 +52,7 @@ export default function HeroSection() {
           <p className="font-condensed text-lg tracking-[0.2em] text-green-700/85 sm:text-xl">
             Sugarcane Magic: Just the Cane, No Additives
           </p>
-          <h1 className="mt-3 font-condensed text-[3.8rem] font-extrabold leading-none tracking-[0.08em] text-[#1f2b1f] sm:text-[5.2rem] lg:text-[7.2rem]">
+          <h1 className="mt-3 font-condensed text-[3.8rem] font-extrabold leading-none tracking-[0.08em] text-[#2c6a1e] sm:text-[5.2rem] lg:text-[7.2rem]">
             FROOTCANE
           </h1>
         </div>
@@ -139,21 +139,21 @@ export default function HeroSection() {
         <div className="mt-10 grid grid-cols-2 gap-4 border-t border-green-100 pt-6 sm:grid-cols-4 lg:mt-12">
           <div className="reveal-up">
             <p className="font-condensed text-4xl font-bold leading-none text-green-700">
-              25+
+              22+
             </p>
-            <p className="mt-1 text-lg text-[#555d4b]">Flavor&apos;s</p>
+            <p className="mt-1 text-lg text-[#555d4b]">Flavours</p>
           </div>
           <div className="reveal-up">
             <p className="font-condensed text-4xl font-bold leading-none text-green-700">
-              20+
+              100%
             </p>
-            <p className="mt-1 text-lg text-[#555d4b]">Expert&apos;s</p>
+            <p className="mt-1 text-lg text-[#555d4b]">Hygienic</p>
           </div>
           <div className="reveal-up">
             <p className="font-condensed text-4xl font-bold leading-none text-green-700">
-              70+
+              2
             </p>
-            <p className="mt-1 text-lg text-[#555d4b]">Shop&apos;s</p>
+            <p className="mt-1 text-lg text-[#555d4b]">Shops</p>
           </div>
           <div className="reveal-up rounded-2xl border border-[#d9e7c9] bg-white/70 px-4 py-3 shadow-[0_10px_20px_rgba(46,83,29,0.08)]">
             <p className="text-sm font-semibold tracking-[0.12em] text-[#4f6d39]">

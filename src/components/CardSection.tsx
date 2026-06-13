@@ -5,10 +5,10 @@ export default function CardSection() {
     <section className="relative overflow-hidden bg-transparent py-2 sm:py-4">
       <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
         <div className="item-reveal">
-          <h3 className="font-slab text-5xl font-bold tracking-[0.02em] text-[#1b2f1a] sm:text-6xl">
+          <h3 className="font-slab text-5xl font-bold tracking-[0.02em] text-[#2c6a1e] sm:text-6xl">
             About Frootcane
           </h3>
-          <div className="mt-3 h-1 w-32 rounded-full bg-[#315f23]" />
+          <div className="mt-3 h-1 w-32 rounded-full bg-[#2c6a1e]" />
           <p className="mt-6 max-w-xl text-[1.03rem] leading-8 text-[#55634d]">
             Frootcane serves fresh sugarcane juice prepared in hygienic
             conditions with carefully selected ingredients. Every order is
