@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Frootcane offers freshly pressed sugarcane juice made from 100% natural ingredients. Pure energy, no preservatives. Fresh, clean, and full of flavour.",
   icons: {
-    icon: "/Frootcane with trade mark.png",
+    icon: "/Frootcane-with-trade-mark.png",
   },
 };
 

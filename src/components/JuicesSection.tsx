@@ -79,7 +79,7 @@ export default function JuicesSection() {
         </div>
 
         <div className="grid gap-4 lg:hidden">
-          {items.slice(0, 4).map((item) => (
+          {[items[0], items[1]].map((item) => (
             <article key={item.id} className="item-reveal group relative h-64 overflow-hidden rounded-3xl border border-green-100 shadow-[0_10px_20px_rgba(43,95,30,0.12)]">
               <Image src={item.img} alt="Frootcane gallery" fill className="object-cover transition duration-700 group-hover:brightness-95" />
             </article>

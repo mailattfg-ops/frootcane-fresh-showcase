@@ -37,7 +37,7 @@ export default function Footer() {
           <div>
             <div className="mb-4 flex items-center gap-3">
               <Image
-                src="/Frootcane with trade mark.png"
+                src="/Frootcane-with-trade-mark.png"
                 alt="Frootcane logo"
                 width={168}
                 height={40}

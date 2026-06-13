@@ -86,7 +86,7 @@ export default function PageLoader() {
             <SpinningTextDemo />
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
               <Image
-                src="/Frootcane with trade mark.png"
+                src="/Frootcane-with-trade-mark.png"
                 alt="Frootcane logo"
                 width={170}
                 height={42}

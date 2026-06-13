@@ -150,7 +150,7 @@ export default function Navbar() {
               >
                 <span className="inline-flex h-28 w-28 items-center justify-center rounded-full border-[3px] border-[#9fc781] bg-linear-to-b from-[#fefff8] to-[#edf5df] shadow-[0_12px_24px_rgba(51,83,36,0.26)] ring-4 ring-[#ecf4df]/75">
                   <Image
-                    src="/Frootcane with trade mark.png"
+                    src="/Frootcane-with-trade-mark.png"
                     alt="Frootcane logo"
                     width={190}
                     height={44}
@@ -190,7 +190,7 @@ export default function Navbar() {
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:hidden">
             <Link href="#home" onClick={(event) => handleNavClick(event, "#home")} className="flex items-center">
               <Image
-                src="/Frootcane with trade mark.png"
+                src="/Frootcane-with-trade-mark.png"
                 alt="Frootcane logo"
                 width={190}
                 height={46}
