@@ -5,14 +5,24 @@ import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 const pages = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#about" },
+  { label: "Menu", href: "#menu" },
   { label: "Gallery", href: "#gallery" },
   { label: "Reach Out", href: "#contact" },
 ];
 
 const contact = {
-  address:
-    "Frootcane, Opp Guruvayoor Private Bus Stand, Guruvayoor, Thrissur, Kerala",
-  phone: "+918015165834",
+  locations: [
+    {
+      address: "OPP new private bus stand, Guruvayoor",
+      mapUrl: null,
+    },
+    {
+      address: "Outer Ring Road, near Guruvayoor railway station, Guruvayoor",
+      mapUrl: "https://maps.app.goo.gl/4LTvtzvd7hT51WYK9",
+    },
+  ],
+  whatsapp: "+91 92920 20093",
+  phone: "+91 92920 10093",
   email: "hello@frootcane.com",
 };
 
@@ -40,7 +50,7 @@ export default function Footer() {
             </p>
             <div className="mt-4 flex items-center gap-3 text-green-700">
               <a
-                href="https://wa.me/918015165834"
+                href="https://wa.me/919292020093"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#91bf6e] bg-[#e8f5d6] transition hover:bg-white"
                 aria-label="WhatsApp"
                 target="_blank"
@@ -122,9 +132,26 @@ export default function Footer() {
                 <MapPin size={17} className="mt-0.5 text-[#d4ecb5]" />
                 <div>
                   <p className="mb-1 text-xs uppercase tracking-widest text-[#cde6b1]">
-                    Address
+                    Locations
                   </p>
-                  <p className="text-sm text-[#edf6e1]">{contact.address}</p>
+                  <ul className="space-y-2 text-sm text-[#edf6e1]">
+                    {contact.locations.map((loc, idx) => (
+                      <li key={idx}>
+                        {loc.mapUrl ? (
+                          <a
+                            href={loc.mapUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-[#cfe4b8]/80 hover:text-white"
+                          >
+                            {loc.address} ↗
+                          </a>
+                        ) : (
+                          <span>{loc.address}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -133,12 +160,22 @@ export default function Footer() {
                   <p className="mb-1 text-xs uppercase tracking-widest text-[#cde6b1]">
                     Phone
                   </p>
-                  <a
-                    href={`tel:${contact.phone}`}
-                    className="text-sm text-[#edf6e1] transition hover:text-[#d4ecb5]"
-                  >
-                    {contact.phone}
-                  </a>
+                  <div className="flex flex-col gap-1 text-sm text-[#edf6e1]">
+                    <a
+                      href={`tel:${contact.phone}`}
+                      className="transition hover:text-[#d4ecb5]"
+                    >
+                      {contact.phone} (Call)
+                    </a>
+                    <a
+                      href={`https://wa.me/919292020093`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition hover:text-[#d4ecb5]"
+                    >
+                      {contact.whatsapp} (WhatsApp)
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="flex items-start gap-3">

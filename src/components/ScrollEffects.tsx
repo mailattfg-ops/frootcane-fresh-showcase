@@ -70,7 +70,7 @@ export default function ScrollEffects() {
         },
       );
 
-      ["home", "about", "gallery", "contact"].forEach((id) => {
+      ["home", "about", "menu", "gallery", "contact"].forEach((id) => {
         const section = document.getElementById(id);
         if (section) {
           reducedSectionObserver.observe(section);
@@ -137,7 +137,7 @@ export default function ScrollEffects() {
       },
     );
 
-    ["home", "about", "gallery", "contact"].forEach((id) => {
+    ["home", "about", "menu", "gallery", "contact"].forEach((id) => {
       const section = document.getElementById(id);
       if (section) {
         sectionObserver.observe(section);

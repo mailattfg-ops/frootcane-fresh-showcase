@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Menu", href: "#menu" },
   { label: "Gallery", href: "#gallery" },
   { label: "Contact", href: "#contact" },
 ];
@@ -18,7 +19,7 @@ export default function Navbar() {
   const [inHomeSection, setInHomeSection] = useState(true);
   const hideTimerRef = useRef<number | null>(null);
   const lastScrollYRef = useRef(0);
-  const [homeLink, aboutLink, galleryLink, contactLink] = navLinks;
+  const [homeLink, aboutLink, menuLink, galleryLink, contactLink] = navLinks;
 
   const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!href.startsWith("#")) {
@@ -121,8 +122,9 @@ export default function Navbar() {
     >
       <div className="w-full px-0">
         <div className="relative border-y border-[#cadcb7] bg-linear-to-r from-[#f6f8ef] via-[#edf5e3] to-[#e8f1dc] py-4 shadow-[0_8px_18px_rgba(57,88,38,0.14)]">
-          <div className="mx-auto hidden max-w-7xl items-center justify-center lg:flex">
-            <nav className="flex w-full items-center justify-center gap-14 px-8">
+          <div className="mx-auto hidden max-w-7xl items-center justify-between lg:flex px-8">
+            {/* Left side links */}
+            <div className="flex flex-1 justify-end items-center gap-14">
               <Link
                 href={homeLink.href}
                 onClick={(event) => handleNavClick(event, homeLink.href)}
@@ -137,9 +139,37 @@ export default function Navbar() {
               >
                 {aboutLink.label}
               </Link>
+            </div>
 
-              <span className="w-44" />
+            {/* Center Logo */}
+            <div className="flex h-14 w-44 items-center justify-center relative z-20 flex-none mx-8">
+              <Link
+                href="#home"
+                onClick={(event) => handleNavClick(event, "#home")}
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center flex"
+              >
+                <span className="inline-flex h-28 w-28 items-center justify-center rounded-full border-[3px] border-[#9fc781] bg-linear-to-b from-[#fefff8] to-[#edf5df] shadow-[0_12px_24px_rgba(51,83,36,0.26)] ring-4 ring-[#ecf4df]/75">
+                  <Image
+                    src="/Frootcane with trade mark.png"
+                    alt="Frootcane logo"
+                    width={190}
+                    height={44}
+                    className="h-auto w-20 max-w-none"
+                    priority
+                  />
+                </span>
+              </Link>
+            </div>
 
+            {/* Right side links */}
+            <div className="flex flex-1 justify-start items-center gap-14">
+              <Link
+                href={menuLink.href}
+                onClick={(event) => handleNavClick(event, menuLink.href)}
+                className="font-condensed text-[1.25rem] font-medium tracking-[0.06em] text-[#253d1f] transition duration-300 hover:text-[#3c6a2f]"
+              >
+                {menuLink.label}
+              </Link>
               <Link
                 href={galleryLink.href}
                 onClick={(event) => handleNavClick(event, galleryLink.href)}
@@ -154,25 +184,8 @@ export default function Navbar() {
               >
                 {contactLink.label}
               </Link>
-            </nav>
+            </div>
           </div>
-
-          <Link
-            href="#home"
-            onClick={(event) => handleNavClick(event, "#home")}
-            className="absolute left-1/2 top-[64%] hidden -translate-x-1/2 -translate-y-1/2 items-center justify-center lg:flex"
-          >
-            <span className="inline-flex h-28 w-28 items-center justify-center rounded-full border-[3px] border-[#9fc781] bg-linear-to-b from-[#fefff8] to-[#edf5df] shadow-[0_12px_24px_rgba(51,83,36,0.26)] ring-4 ring-[#ecf4df]/75">
-              <Image
-                src="/Frootcane with trade mark.png"
-                alt="Frootcane logo"
-                width={190}
-                height={44}
-                className="h-auto w-20 max-w-none"
-                priority
-              />
-            </span>
-          </Link>
 
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:hidden">
             <Link href="#home" onClick={(event) => handleNavClick(event, "#home")} className="flex items-center">

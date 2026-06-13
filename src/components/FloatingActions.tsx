@@ -3,7 +3,7 @@
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const whatsappLink = "https://wa.me/918015165834";
+const whatsappLink = "https://wa.me/919292020093";
 
 export default function FloatingActions() {
   const [showTop, setShowTop] = useState(false);

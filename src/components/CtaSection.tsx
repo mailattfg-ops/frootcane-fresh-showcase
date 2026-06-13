@@ -3,7 +3,7 @@
 import { Mail, MessageCircle, PhoneCall } from "lucide-react";
 import { FormEvent, useState } from "react";
 
-const whatsappNumber = "918015165834";
+const whatsappNumber = "919292020093";
 
 export default function CtaSection() {
   const [firstName, setFirstName] = useState("");
@@ -11,6 +11,7 @@ export default function CtaSection() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState<"bus" | "railway">("bus");
   const [errors, setErrors] = useState<{
     firstName?: string;
     lastName?: string;
@@ -188,11 +189,11 @@ export default function CtaSection() {
               <div className="mt-5 space-y-3">
                 <div className="rounded-xl border border-[#8aba66] bg-[#f4faea]/88 p-4 shadow-[0_4px_10px_rgba(41,74,25,0.12)]">
                   <p className="flex items-center gap-2 text-sm text-[#36552e]"><PhoneCall size={16} /> Hotline</p>
-                  <p className="mt-1 text-[1.03rem] font-semibold text-[#1f3b19]">+91 80151 65834</p>
+                  <p className="mt-1 text-[1.03rem] font-semibold text-[#1f3b19]">+91 92920 10093</p>
                 </div>
                 <div className="rounded-xl border border-[#8aba66] bg-[#f4faea]/88 p-4 shadow-[0_4px_10px_rgba(41,74,25,0.12)]">
                   <p className="flex items-center gap-2 text-sm text-[#36552e]"><MessageCircle size={16} /> SMS / WhatsApp</p>
-                  <p className="mt-1 text-[1.03rem] font-semibold text-[#1f3b19]">+91 80151 65834</p>
+                  <p className="mt-1 text-[1.03rem] font-semibold text-[#1f3b19]">+91 92920 20093</p>
                 </div>
                 <div className="rounded-xl border border-[#8aba66] bg-[#f4faea]/88 p-4 shadow-[0_4px_10px_rgba(41,74,25,0.12)]">
                   <p className="flex items-center gap-2 text-sm text-[#36552e]"><Mail size={16} /> Email</p>
@@ -222,17 +223,67 @@ export default function CtaSection() {
           </div>
         </div>
 
-        <div className="item-reveal mt-8 overflow-hidden rounded-4xl border border-[#d7e6c6] bg-white shadow-[0_12px_22px_rgba(43,95,30,0.1)] sm:mt-9 lg:mt-10">
-          <div className="relative h-72 w-full sm:h-88">
-            <iframe
-              title="Frootcane location map"
-              src="https://maps.google.com/maps?q=Guruvayoor%20Private%20Bus%20Stand%20Thrissur&t=&z=14&ie=UTF8&iwloc=&output=embed"
-              className="h-full w-full border-0 filter-[hue-rotate(24deg)_saturate(0.9)_contrast(1.02)]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#4f8f2f]/6 via-transparent to-[#4f8f2f]/5" />
+        <div className="mt-8">
+          <p className="text-center font-condensed text-xl font-bold uppercase tracking-wider text-[#1e3818] mb-4">Our Locations</p>
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+            <button
+              type="button"
+              onClick={() => setSelectedLocation("bus")}
+              className={`rounded-full px-5 py-2 text-sm font-semibold border transition duration-300 ${
+                selectedLocation === "bus"
+                  ? "bg-[#2c6a1e] text-white border-[#2c6a1e] shadow-[0_6px_12px_rgba(44,106,30,0.2)]"
+                  : "bg-white text-[#2a4523] border-[#cfe1bd] hover:bg-[#f3f9ed]"
+              }`}
+            >
+              1. OPP New Private Bus Stand
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedLocation("railway")}
+              className={`rounded-full px-5 py-2 text-sm font-semibold border transition duration-300 ${
+                selectedLocation === "railway"
+                  ? "bg-[#2c6a1e] text-white border-[#2c6a1e] shadow-[0_6px_12px_rgba(44,106,30,0.2)]"
+                  : "bg-white text-[#2a4523] border-[#cfe1bd] hover:bg-[#f3f9ed]"
+              }`}
+            >
+              2. Outer Ring Road (Near Railway Station)
+            </button>
           </div>
+
+          <div className="item-reveal overflow-hidden rounded-4xl border border-[#d7e6c6] bg-white shadow-[0_12px_22px_rgba(43,95,30,0.1)]">
+            <div className="relative h-72 w-full sm:h-88">
+              {selectedLocation === "bus" ? (
+                <iframe
+                  title="Frootcane Bus Stand Outlet"
+                  src="https://maps.google.com/maps?q=Guruvayoor%20Private%20Bus%20Stand%20Thrissur&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                  className="h-full w-full border-0 filter-[hue-rotate(24deg)_saturate(0.9)_contrast(1.02)]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              ) : (
+                <iframe
+                  title="Frootcane Railway Station Outlet"
+                  src="https://maps.google.com/maps?q=10.5966356,76.0426715(Froot%20Cane)&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  className="h-full w-full border-0 filter-[hue-rotate(24deg)_saturate(0.9)_contrast(1.02)]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              )}
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#4f8f2f]/6 via-transparent to-[#4f8f2f]/5" />
+            </div>
+          </div>
+          {selectedLocation === "railway" && (
+            <div className="mt-3 text-center">
+              <a
+                href="https://maps.app.goo.gl/4LTvtzvd7hT51WYK9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-[#2c6a1e] underline hover:text-[#1c4712]"
+              >
+                Open directly in Google Maps app ↗
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </section>
