@@ -24,12 +24,12 @@ export default function Home() {
           <section id="about" className="section-reveal section-delay-2 mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 sm:pb-12 sm:pt-10 lg:px-8 lg:pb-14 lg:pt-12">
             <CardSection />
           </section>
-          <section id="menu" className="section-reveal section-delay-3 mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 sm:pb-12 sm:pt-10 lg:px-8 lg:pb-14 lg:pt-12">
+          <section id="menu" className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 sm:pb-12 sm:pt-10 lg:px-8 lg:pb-14 lg:pt-12">
             <MenuSection />
           </section>
-          <section id="gallery" className="section-reveal section-delay-4">
+          <div className="section-reveal section-delay-4">
             <JuicesSection />
-          </section>
+          </div>
         </div>
         <div className="section-reveal section-delay-5">
           <CtaSection />
