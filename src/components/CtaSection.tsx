@@ -70,17 +70,17 @@ export default function CtaSection() {
   return (
     <section id="contact" className="bg-[#f7f3e6] px-5 pb-10 pt-2 sm:px-6 sm:pb-12 sm:pt-3 lg:pb-14 lg:pt-4">
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-5 text-center font-slab text-5xl font-bold text-[#2c6a1e] sm:text-6xl">Contact Us</h2>
+        <h2 className="mb-5 text-center font-slab text-3xl min-[400px]:text-4xl font-bold text-[#2c6a1e] sm:text-6xl">Contact Us</h2>
 
         <div className="item-reveal rounded-[2.1rem] border border-[#d3e4c3] bg-linear-to-br from-white/95 via-[#f8fbf2] to-[#f3f8ea] p-4 shadow-[0_22px_40px_rgba(45,84,29,0.14)] ring-1 ring-[#edf4e4] sm:p-6">
           <div className="grid gap-5 lg:grid-cols-[1.55fr_0.85fr]">
             <form onSubmit={submitToWhatsapp} className="item-reveal rounded-3xl border border-[#d6e5c7] bg-white/90 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)] backdrop-blur-sm sm:p-6">
-              <h3 className="font-condensed text-4xl font-bold text-[#1f3d1a]">Send us a message</h3>
+              <h3 className="font-condensed text-2xl min-[400px]:text-3xl font-bold text-[#1f3d1a] sm:text-4xl">Send us a message</h3>
               <p className="mt-1 text-[1rem] text-[#5f6e57]">Need support or bulk ordering help? Reach out to Frootcane.</p>
 
               <div className="mt-5 grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="contact-first-name" className="mb-2 block font-condensed text-2xl font-semibold text-[#214119]">First Name</label>
+                  <label htmlFor="contact-first-name" className="mb-2 block font-condensed text-lg sm:text-xl md:text-2xl font-semibold text-[#214119]">First Name</label>
                   <input
                     id="contact-first-name"
                     type="text"
@@ -98,7 +98,7 @@ export default function CtaSection() {
                 </div>
 
                 <div>
-                  <label htmlFor="contact-last-name" className="mb-2 block font-condensed text-2xl font-semibold text-[#214119]">Last Name</label>
+                  <label htmlFor="contact-last-name" className="mb-2 block font-condensed text-lg sm:text-xl md:text-2xl font-semibold text-[#214119]">Last Name</label>
                   <input
                     id="contact-last-name"
                     type="text"
@@ -118,7 +118,7 @@ export default function CtaSection() {
 
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="contact-email" className="mb-2 block font-condensed text-2xl font-semibold text-[#214119]">Email</label>
+                  <label htmlFor="contact-email" className="mb-2 block font-condensed text-lg sm:text-xl md:text-2xl font-semibold text-[#214119]">Email</label>
                   <input
                     id="contact-email"
                     type="email"
@@ -135,7 +135,7 @@ export default function CtaSection() {
                 </div>
 
                 <div>
-                  <label htmlFor="contact-phone" className="mb-2 block font-condensed text-2xl font-semibold text-[#214119]">Contact Details</label>
+                  <label htmlFor="contact-phone" className="mb-2 block font-condensed text-lg sm:text-xl md:text-2xl font-semibold text-[#214119]">Contact Details</label>
                   <input
                     id="contact-phone"
                     type="tel"
@@ -155,7 +155,7 @@ export default function CtaSection() {
               </div>
 
               <div className="mt-4">
-                <label htmlFor="contact-message" className="mb-2 block font-condensed text-2xl font-semibold text-[#214119]">Message</label>
+                <label htmlFor="contact-message" className="mb-2 block font-condensed text-lg sm:text-xl md:text-2xl font-semibold text-[#214119]">Message</label>
                 <textarea
                   id="contact-message"
                   rows={4}
@@ -177,14 +177,14 @@ export default function CtaSection() {
 
               <button
                 type="submit"
-                className="mt-4 inline-flex h-12 min-w-48 items-center justify-center rounded-full border border-[#3f6f2e] bg-linear-to-r from-[#2f6d1d] to-[#4c8c2c] px-8 font-condensed text-2xl font-bold text-white shadow-[0_12px_24px_rgba(67,130,30,0.3)] transition duration-300 hover:-translate-y-0.5 hover:from-[#295f1a] hover:to-[#407826]"
+                className="mt-4 inline-flex h-12 min-w-48 items-center justify-center rounded-full border border-[#3f6f2e] bg-linear-to-r from-[#2f6d1d] to-[#4c8c2c] px-6 sm:px-8 font-condensed text-lg sm:text-xl md:text-2xl font-bold text-white shadow-[0_12px_24px_rgba(67,130,30,0.3)] transition duration-300 hover:-translate-y-0.5 hover:from-[#295f1a] hover:to-[#407826]"
               >
                 Send a Message
               </button>
             </form>
 
             <aside className="item-reveal rounded-3xl border border-[#8ebb66] bg-linear-to-b from-[#8fc265] via-[#7db353] to-[#6ea547] p-5 text-[#163015] shadow-[0_16px_30px_rgba(52,93,32,0.28)] sm:p-6">
-              <h3 className="font-condensed text-4xl font-bold leading-tight text-[#173316]">We are always here to help you.</h3>
+              <h3 className="font-condensed text-2xl min-[400px]:text-3xl font-bold leading-tight text-[#173316] sm:text-4xl">We are always here to help you.</h3>
 
               <div className="mt-5 space-y-3">
                 <div className="rounded-xl border border-[#8aba66] bg-[#f4faea]/88 p-4 shadow-[0_4px_10px_rgba(41,74,25,0.12)]">

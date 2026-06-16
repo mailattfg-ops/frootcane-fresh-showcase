@@ -91,7 +91,7 @@ export default function JuicesSection() {
         <div className="w-full flex flex-col justify-center">
           <div className="mb-6 text-center sm:mb-8">
             <p className="font-condensed text-base uppercase tracking-[0.2em] text-[#2c6a1e] font-semibold">Gallery</p>
-            <h2 className="mt-1 font-slab text-4xl font-bold text-[#2c6a1e] sm:text-5xl lg:text-6xl">
+            <h2 className="mt-1 font-slab text-3xl min-[400px]:text-4xl font-bold text-[#2c6a1e] sm:text-5xl lg:text-6xl">
               Frootcane Moments
             </h2>
             <p className="mx-auto mt-2 max-w-2xl text-sm sm:text-base text-[#56614b]">
@@ -147,7 +147,7 @@ export default function JuicesSection() {
             {/* Text section */}
             <div className="flex flex-col justify-center text-center lg:text-left order-2 lg:order-1">
               <p className="font-condensed text-base uppercase tracking-[0.2em] text-[#2c6a1e] font-semibold">Storefront</p>
-              <h2 className="mt-1 font-slab text-4xl font-bold text-[#2c6a1e] sm:text-5xl lg:text-6xl">
+              <h2 className="mt-1 font-slab text-3xl min-[400px]:text-4xl font-bold text-[#2c6a1e] sm:text-5xl lg:text-6xl">
                 Frootcane Shop
               </h2>
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-[#4e5a44] max-w-xl mx-auto lg:mx-0">

@@ -49,17 +49,17 @@ export default function HeroSection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="font-condensed text-lg tracking-[0.2em] text-green-700/85 sm:text-xl">
+          <p className="font-condensed text-xs tracking-[0.12em] text-green-700/85 min-[400px]:text-sm min-[400px]:tracking-[0.16em] sm:text-xl sm:tracking-[0.2em]">
             Sugarcane Magic: Just the Cane, No Additives
           </p>
-          <h1 className="mt-3 font-condensed text-[3.8rem] font-extrabold leading-none tracking-[0.08em] text-[#2c6a1e] sm:text-[5.2rem] lg:text-[7.2rem]">
+          <h1 className="mt-3 font-condensed text-[2.6rem] min-[420px]:text-[3.4rem] sm:text-[5.2rem] lg:text-[7.2rem] font-extrabold leading-none tracking-[0.08em] text-[#2c6a1e]">
             FROOTCANE
           </h1>
         </div>
 
         <div className="mt-8 grid grid-cols-1 items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
           <div className="reveal-up mx-auto max-w-xl lg:mx-0 lg:pb-8 lg:pr-6">
-            <h2 className="font-condensed text-[2.8rem] font-bold leading-[0.95] text-green-700 sm:text-[3.7rem]">
+            <h2 className="font-condensed text-[1.8rem] min-[420px]:text-[2.4rem] sm:text-[3.7rem] font-bold leading-[0.95] text-green-700">
               World&apos;s Best
               <br />
               Quality Juice.
@@ -155,11 +155,11 @@ export default function HeroSection() {
             </p>
             <p className="mt-1 text-lg text-[#555d4b]">Shops</p>
           </div>
-          <div className="reveal-up rounded-2xl border border-[#d9e7c9] bg-white/70 px-4 py-3 shadow-[0_10px_20px_rgba(46,83,29,0.08)]">
-            <p className="text-sm font-semibold tracking-[0.12em] text-[#4f6d39]">
+          <div className="reveal-up rounded-2xl border border-[#d9e7c9] bg-white/70 p-3 min-[400px]:px-4 min-[400px]:py-3 shadow-[0_10px_20px_rgba(46,83,29,0.08)]">
+            <p className="text-xs min-[400px]:text-sm font-semibold tracking-[0.12em] text-[#4f6d39]">
               FRESH DAILY
             </p>
-            <p className="mt-1 text-sm text-[#59654f]">
+            <p className="mt-1 text-xs min-[400px]:text-sm text-[#59654f]">
               Pressed fresh for every order
             </p>
           </div>

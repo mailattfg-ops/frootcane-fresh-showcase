@@ -55,58 +55,58 @@ export default function MenuSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center">
-          <p className="font-condensed text-lg uppercase tracking-[0.2em] text-[#3c6a2f]">
+          <p className="font-condensed text-sm uppercase tracking-[0.2em] text-[#3c6a2f] sm:text-lg">
             Fresh & Handcrafted
           </p>
-          <h2 className="mt-2 font-slab text-5xl font-bold text-[#2c6a1e] sm:text-6xl">
+          <h2 className="mt-2 font-slab text-3xl min-[400px]:text-4xl font-bold text-[#2c6a1e] sm:text-6xl">
             Our Menu
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-[#56614b]">
+          <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-[#56614b]">
             Explore our range of freshly pressed sugarcane juices. From standard classics and tropical fruit blends to spicy infusions and wellness boosters.
           </p>
         </div>
 
         {/* Tab Filters */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
           <button
             onClick={() => setActiveTab("all")}
-            className={`flex items-center gap-2 rounded-full px-6 py-2.5 font-condensed text-sm font-bold tracking-wider uppercase transition duration-300 ${
+            className={`flex items-center gap-1.5 rounded-full px-4 py-2 font-condensed text-xs font-bold tracking-wider uppercase transition duration-300 sm:px-6 sm:py-2.5 sm:text-sm ${
               activeTab === "all"
                 ? "bg-[#2c6a1e] text-white shadow-[0_8px_16px_rgba(44,106,30,0.25)]"
                 : "border border-[#cfe1bd] bg-white text-[#2a4523] hover:bg-[#f3f9ed]"
             }`}
           >
-            <RefreshCw size={14} className={activeTab === "all" ? "animate-spin-slow" : ""} /> All Juices
+            <RefreshCw size={12} className={activeTab === "all" ? "animate-spin-slow" : ""} /> All Juices
           </button>
           <button
             onClick={() => setActiveTab("classics")}
-            className={`flex items-center gap-2 rounded-full px-6 py-2.5 font-condensed text-sm font-bold tracking-wider uppercase transition duration-300 ${
+            className={`flex items-center gap-1.5 rounded-full px-4 py-2 font-condensed text-xs font-bold tracking-wider uppercase transition duration-300 sm:px-6 sm:py-2.5 sm:text-sm ${
               activeTab === "classics"
                 ? "bg-[#2c6a1e] text-white shadow-[0_8px_16px_rgba(44,106,30,0.25)]"
                 : "border border-[#cfe1bd] bg-white text-[#2a4523] hover:bg-[#f3f9ed]"
             }`}
           >
-            <Sparkles size={14} /> Classics & Fruit Flavours
+            <Sparkles size={12} /> Classics & Fruit Flavours
           </button>
           <button
             onClick={() => setActiveTab("spicy")}
-            className={`flex items-center gap-2 rounded-full px-6 py-2.5 font-condensed text-sm font-bold tracking-wider uppercase transition duration-300 ${
+            className={`flex items-center gap-1.5 rounded-full px-4 py-2 font-condensed text-xs font-bold tracking-wider uppercase transition duration-300 sm:px-6 sm:py-2.5 sm:text-sm ${
               activeTab === "spicy"
                 ? "bg-[#c2410c] text-white shadow-[0_8px_16px_rgba(194,65,12,0.25)]"
                 : "border border-[#fbcfe8] bg-white text-[#9a3412] hover:bg-[#fff7ed]"
             }`}
           >
-            <Flame size={14} /> Spicy Specials
+            <Flame size={12} /> Spicy Specials
           </button>
           <button
             onClick={() => setActiveTab("healthy")}
-            className={`flex items-center gap-2 rounded-full px-6 py-2.5 font-condensed text-sm font-bold tracking-wider uppercase transition duration-300 ${
+            className={`flex items-center gap-1.5 rounded-full px-4 py-2 font-condensed text-xs font-bold tracking-wider uppercase transition duration-300 sm:px-6 sm:py-2.5 sm:text-sm ${
               activeTab === "healthy"
                 ? "bg-[#0891b2] text-white shadow-[0_8px_16px_rgba(8,145,178,0.25)]"
                 : "border border-[#cffafe] bg-white text-[#083344] hover:bg-[#ecfeff]"
             }`}
           >
-            <HeartPulse size={14} /> Healthy Cane
+            <HeartPulse size={12} /> Healthy Cane
           </button>
         </div>
 
